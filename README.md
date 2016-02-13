@@ -1,4 +1,5 @@
 # Tiến lên - The national card game of Vietnam
+[![](https://api.travis-ci.org/rcedwards/TienLen.svg)](https://travis-ci.org/rcedwards/TienLen/)
 
 [Wikipedia](https://en.wikipedia.org/wiki/Tiến_lên)
 
