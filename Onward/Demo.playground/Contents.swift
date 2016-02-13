@@ -9,13 +9,13 @@ for card in deck.cards {
     print(card)
 }
 
-let aceOfSpades = TiếnLênCard(rank: .Ace, suit: .Spade)
-let twoOfHearts = TiếnLênCard(rank: .Two, suit: .Heart)
+let aceOfSpades = TienLenCard(rank: .Ace, suit: .Spade)
+let twoOfHearts = TienLenCard(rank: .Two, suit: .Heart)
 if aceOfSpades < twoOfHearts {
     print("Correct")
 }
 
-let myGame = TiếnLên(deck: deck)
+let myGame = TienLen(deck: deck)
 myGame.validateCardOrder()
 
 

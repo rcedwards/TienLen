@@ -1,13 +1,13 @@
 //
-//  TiếnLên.swift
+//  TienLen.swift
 //  TienLen
 //
 //  Created by Robert Edwards on 2/13/16.
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-public typealias TiếnLênCard = Card
-public struct TiếnLên: Game {
+public typealias TienLenCard = Card
+public struct TienLen: Game {
 
     // MARK: - Member Variables
 
@@ -50,10 +50,10 @@ public struct TiếnLên: Game {
     }
 }
 
-extension TiếnLênCard: Comparable { }
-public func <(lhs: TiếnLênCard, rhs: TiếnLênCard) -> Bool {
-    let rankOrder = TiếnLên.rankOrder
-    let suitOrder = TiếnLên.suitOrder
+extension TienLenCard: Comparable { }
+public func <(lhs: TienLenCard, rhs: TienLenCard) -> Bool {
+    let rankOrder = TienLen.rankOrder
+    let suitOrder = TienLen.suitOrder
 
     guard
         let lhsRankIndex = rankOrder.indexOf(lhs.rank),

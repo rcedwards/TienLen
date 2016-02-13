@@ -14,7 +14,7 @@
 		E45ED97D1C6FCA1800FE3B95 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED97C1C6FCA1800FE3B95 /* Suit.swift */; };
 		E45ED97F1C6FCA2B00FE3B95 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED97E1C6FCA2B00FE3B95 /* Deck.swift */; };
 		E45ED9811C6FCA5300FE3B95 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9801C6FCA5300FE3B95 /* Game.swift */; };
-		E45ED9841C6FCAB900FE3B95 /* TiếnLên.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9831C6FCAB900FE3B95 /* TiếnLên.swift */; };
+		E45ED9841C6FCAB900FE3B95 /* TienLen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9831C6FCAB900FE3B95 /* TienLen.swift */; };
 		E45ED98D1C6FCBB700FE3B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED98C1C6FCBB700FE3B95 /* AppDelegate.swift */; };
 		E45ED9961C6FCBB700FE3B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45ED9941C6FCBB700FE3B95 /* Main.storyboard */; };
 		E45ED9981C6FCBB700FE3B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45ED9971C6FCBB700FE3B95 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		E45ED9BE1C6FD40F00FE3B95 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9BD1C6FD40F00FE3B95 /* SuitTests.swift */; };
 		E45ED9C01C6FD43F00FE3B95 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9BF1C6FD43F00FE3B95 /* DeckTests.swift */; };
 		E45ED9C21C6FD51900FE3B95 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9C11C6FD51900FE3B95 /* GameTests.swift */; };
-		E45ED9C51C6FD77400FE3B95 /* TiếnLênTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9C41C6FD77400FE3B95 /* TiếnLênTests.swift */; };
+		E45ED9C51C6FD77400FE3B95 /* TienLenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,7 @@
 		E45ED97C1C6FCA1800FE3B95 /* Suit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
 		E45ED97E1C6FCA2B00FE3B95 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		E45ED9801C6FCA5300FE3B95 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E45ED9831C6FCAB900FE3B95 /* TiếnLên.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TiếnLên.swift"; sourceTree = "<group>"; };
+		E45ED9831C6FCAB900FE3B95 /* TienLen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TienLen.swift; sourceTree = "<group>"; };
 		E45ED98A1C6FCBB700FE3B95 /* Onward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45ED98C1C6FCBB700FE3B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45ED9951C6FCBB700FE3B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		E45ED9BD1C6FD40F00FE3B95 /* SuitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
 		E45ED9BF1C6FD43F00FE3B95 /* DeckTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
 		E45ED9C11C6FD51900FE3B95 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
-		E45ED9C41C6FD77400FE3B95 /* TiếnLênTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TiếnLênTests.swift"; sourceTree = "<group>"; };
+		E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TienLenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 		E45ED95E1C6FC9A700FE3B95 /* TienLen */ = {
 			isa = PBXGroup;
 			children = (
-				E45ED9831C6FCAB900FE3B95 /* TiếnLên.swift */,
+				E45ED9831C6FCAB900FE3B95 /* TienLen.swift */,
 				E45ED9821C6FCA7C00FE3B95 /* Card Game Atoms */,
 				E45ED9781C6FC9DD00FE3B95 /* Supporting Files */,
 			);
@@ -166,7 +166,7 @@
 		E45ED96A1C6FC9A700FE3B95 /* TienLenTests */ = {
 			isa = PBXGroup;
 			children = (
-				E45ED9C41C6FD77400FE3B95 /* TiếnLênTests.swift */,
+				E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */,
 				E45ED9C31C6FD6E200FE3B95 /* Card Game Atoms Tests */,
 				E45ED9791C6FC9E400FE3B95 /* Supporting Files */,
 			);
@@ -435,7 +435,7 @@
 				E45ED97F1C6FCA2B00FE3B95 /* Deck.swift in Sources */,
 				E45ED9811C6FCA5300FE3B95 /* Game.swift in Sources */,
 				E45ED9771C6FC9BE00FE3B95 /* Card.swift in Sources */,
-				E45ED9841C6FCAB900FE3B95 /* TiếnLên.swift in Sources */,
+				E45ED9841C6FCAB900FE3B95 /* TienLen.swift in Sources */,
 				E45ED97D1C6FCA1800FE3B95 /* Suit.swift in Sources */,
 				E45ED97B1C6FC9F200FE3B95 /* Rank.swift in Sources */,
 			);
@@ -448,7 +448,7 @@
 				E45ED9C01C6FD43F00FE3B95 /* DeckTests.swift in Sources */,
 				E45ED9B91C6FD1F200FE3B95 /* CardTests.swift in Sources */,
 				E45ED9BC1C6FD3A800FE3B95 /* RankTests.swift in Sources */,
-				E45ED9C51C6FD77400FE3B95 /* TiếnLênTests.swift in Sources */,
+				E45ED9C51C6FD77400FE3B95 /* TienLenTests.swift in Sources */,
 				E45ED9BE1C6FD40F00FE3B95 /* SuitTests.swift in Sources */,
 				E45ED9C21C6FD51900FE3B95 /* GameTests.swift in Sources */,
 			);
