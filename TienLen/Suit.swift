@@ -19,3 +19,24 @@ public enum Suit {
         .Diamond
     ]
 }
+
+extension Suit: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        return _description
+    }
+    public var debugDescription: String {
+        return _description
+    }
+    public var _description: String {
+        switch self {
+        case .Club:
+            return "♣"
+        case .Diamond:
+            return "♦"
+        case .Heart:
+            return "♥"
+        case .Spade:
+            return "♠"
+        }
+    }
+}

@@ -25,3 +25,15 @@ extension Card: Hashable {
         return rank.hashValue ^ suit.hashValue
     }
 }
+
+extension Card: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        return _description
+    }
+    public var debugDescription: String {
+        return _description
+    }
+    private var _description: String {
+        return "\(rank) \(suit)"
+    }
+}

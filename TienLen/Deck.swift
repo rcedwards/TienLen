@@ -33,4 +33,15 @@ public struct Deck {
         return nil
     }
 }
+
+extension Deck: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        return _description
+    }
+    public var debugDescription: String {
+        return _description
+    }
+    public var _description: String {
+        return cards.reduce("") { $0 + "\($1.description) " }
+    }
 }
