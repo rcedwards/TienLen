@@ -15,5 +15,12 @@ class SuitTests: XCTestCase {
     func testSuitCount() {
         XCTAssertEqual(Suit.allSuits.count, 4)
     }
-    
+
+    func testDescription() {
+        let heart = Suit.Heart
+        let expectedDescription = "♥"
+        XCTAssertEqual(expectedDescription, heart.description)
+        XCTAssertEqual(expectedDescription, heart.debugDescription)
+    }
+
 }

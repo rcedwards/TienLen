@@ -16,4 +16,11 @@ class RankTests: XCTestCase {
         XCTAssertEqual(Rank.allRanks.count, 13)
     }
 
+    func testDescription() {
+        let ace = Rank.Ace
+        let expectedDescription = "A"
+        XCTAssertEqual(expectedDescription, ace.description)
+        XCTAssertEqual(expectedDescription, ace.debugDescription)
+    }
+
 }
