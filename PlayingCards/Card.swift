@@ -6,7 +6,12 @@
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-public struct Card {
+public protocol CardType {
+    var rank: Rank { get }
+    var suit: Suit { get }
+}
+
+public struct Card: CardType {
     public let rank: Rank
     public let suit: Suit
 

@@ -1,6 +1,6 @@
 //
 //  Rank.swift
-//  TienLen
+//  PlayingCards
 //
 //  Created by Robert Edwards on 2/13/16.
 //  Copyright © 2016 Panko. All rights reserved.

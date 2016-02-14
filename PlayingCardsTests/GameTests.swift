@@ -1,6 +1,6 @@
 //
 //  GameTests.swift
-//  TienLen
+//  PlayingCards
 //
 //  Created by Robert Edwards on 2/13/16.
 //  Copyright © 2016 Panko. All rights reserved.
@@ -22,7 +22,6 @@ class GameTests: XCTestCase {
 
 struct ValidGameStub: Game {
     var deck: Deck
-    var playerHands = [Hand]()
 
     init(deck: Deck) {
         self.deck = deck
@@ -53,7 +52,6 @@ struct ValidGameStub: Game {
 
 struct DuplicateRanksGameStub: Game {
     var deck: Deck
-    var playerHands = [Hand]()
 
     init(deck: Deck) {
         self.deck = deck
@@ -84,7 +82,6 @@ struct DuplicateRanksGameStub: Game {
 
 struct IncompleteGameStub: Game {
     var deck: Deck
-    var playerHands = [Hand]()
 
     init(deck: Deck) {
         self.deck = deck
