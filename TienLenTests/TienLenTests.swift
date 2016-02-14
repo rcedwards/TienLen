@@ -8,6 +8,8 @@
 
 import XCTest
 
+import PlayingCards
+
 @testable import TienLen
 
 class TienLenTests: XCTestCase {
@@ -50,12 +52,12 @@ class TienLenTests: XCTestCase {
     }
 
     func testSuitOrder() {
-        let twoOfHearts = TienLenCard(rank: .Two, suit: .Heart)
-        let twoOfSpades = TienLenCard(rank: .Two, suit: .Spade)
-        let twoOfClub = TienLenCard(rank: .Two, suit: .Club)
-        let twoOfDiamonds = TienLenCard(rank: .Two, suit: .Diamond)
+        let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
+        let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
+        let twoOfClub = TienLen.Card(rank: .Two, suit: .Club)
+        let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
 
-        let aceOfDiamonds = TienLenCard(rank: .Ace, suit: .Diamond)
+        let aceOfDiamonds = TienLen.Card(rank: .Ace, suit: .Diamond)
 
         XCTAssertGreaterThan(twoOfDiamonds, twoOfClub)
         XCTAssertGreaterThan(twoOfHearts, twoOfDiamonds)

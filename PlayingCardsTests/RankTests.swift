@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import TienLen
+@testable import PlayingCards
 
 class RankTests: XCTestCase {
 

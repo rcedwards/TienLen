@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		E45ED9601C6FC9A700FE3B95 /* TienLen.h in Headers */ = {isa = PBXBuildFile; fileRef = E45ED95F1C6FC9A700FE3B95 /* TienLen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E45ED9671C6FC9A700FE3B95 /* TienLen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */; };
-		E45ED9771C6FC9BE00FE3B95 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9761C6FC9BE00FE3B95 /* Card.swift */; };
-		E45ED97B1C6FC9F200FE3B95 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED97A1C6FC9F200FE3B95 /* Rank.swift */; };
-		E45ED97D1C6FCA1800FE3B95 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED97C1C6FCA1800FE3B95 /* Suit.swift */; };
-		E45ED97F1C6FCA2B00FE3B95 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED97E1C6FCA2B00FE3B95 /* Deck.swift */; };
-		E45ED9811C6FCA5300FE3B95 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9801C6FCA5300FE3B95 /* Game.swift */; };
 		E45ED9841C6FCAB900FE3B95 /* TienLen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9831C6FCAB900FE3B95 /* TienLen.swift */; };
 		E45ED98D1C6FCBB700FE3B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED98C1C6FCBB700FE3B95 /* AppDelegate.swift */; };
 		E45ED9961C6FCBB700FE3B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45ED9941C6FCBB700FE3B95 /* Main.storyboard */; };
@@ -21,12 +16,21 @@
 		E45ED99B1C6FCBB700FE3B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45ED9991C6FCBB700FE3B95 /* LaunchScreen.storyboard */; };
 		E45ED9B01C6FCBF800FE3B95 /* TienLen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */; };
 		E45ED9B11C6FCBF800FE3B95 /* TienLen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E45ED9B91C6FD1F200FE3B95 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9B81C6FD1F200FE3B95 /* CardTests.swift */; };
-		E45ED9BC1C6FD3A800FE3B95 /* RankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9BB1C6FD3A800FE3B95 /* RankTests.swift */; };
-		E45ED9BE1C6FD40F00FE3B95 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9BD1C6FD40F00FE3B95 /* SuitTests.swift */; };
-		E45ED9C01C6FD43F00FE3B95 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9BF1C6FD43F00FE3B95 /* DeckTests.swift */; };
-		E45ED9C21C6FD51900FE3B95 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9C11C6FD51900FE3B95 /* GameTests.swift */; };
 		E45ED9C51C6FD77400FE3B95 /* TienLenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */; };
+		E45ED9D51C700DBE00FE3B95 /* PlayingCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */; };
+		E45ED9E91C700E6F00FE3B95 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9E41C700E6F00FE3B95 /* Card.swift */; };
+		E45ED9EA1C700E6F00FE3B95 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9E51C700E6F00FE3B95 /* Deck.swift */; };
+		E45ED9EB1C700E6F00FE3B95 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9E61C700E6F00FE3B95 /* Game.swift */; };
+		E45ED9EC1C700E6F00FE3B95 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9E71C700E6F00FE3B95 /* Rank.swift */; };
+		E45ED9ED1C700E6F00FE3B95 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9E81C700E6F00FE3B95 /* Suit.swift */; };
+		E45ED9F41C700E8500FE3B95 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9EF1C700E8500FE3B95 /* CardTests.swift */; };
+		E45ED9F51C700E8500FE3B95 /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9F01C700E8500FE3B95 /* DeckTests.swift */; };
+		E45ED9F61C700E8500FE3B95 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9F11C700E8500FE3B95 /* GameTests.swift */; };
+		E45ED9F71C700E8500FE3B95 /* RankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9F21C700E8500FE3B95 /* RankTests.swift */; };
+		E45ED9F81C700E8500FE3B95 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9F31C700E8500FE3B95 /* SuitTests.swift */; };
+		E45ED9F91C700EDC00FE3B95 /* PlayingCards.h in Headers */ = {isa = PBXBuildFile; fileRef = E45ED9CD1C700DBE00FE3B95 /* PlayingCards.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E45ED9FA1C700EF800FE3B95 /* PlayingCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */; };
+		E45ED9FD1C70104900FE3B95 /* LibraryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 			remoteGlobalIDString = E45ED95B1C6FC9A700FE3B95;
 			remoteInfo = TienLen;
 		};
+		E45ED9D61C700DBE00FE3B95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E45ED9531C6FC9A700FE3B95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45ED9CA1C700DBE00FE3B95;
+			remoteInfo = PlayingCards;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,11 +84,6 @@
 		E45ED9611C6FC9A700FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45ED9661C6FC9A700FE3B95 /* TienLenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TienLenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45ED96D1C6FC9A700FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E45ED9761C6FC9BE00FE3B95 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		E45ED97A1C6FC9F200FE3B95 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
-		E45ED97C1C6FCA1800FE3B95 /* Suit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
-		E45ED97E1C6FCA2B00FE3B95 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		E45ED9801C6FCA5300FE3B95 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E45ED9831C6FCAB900FE3B95 /* TienLen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TienLen.swift; sourceTree = "<group>"; };
 		E45ED98A1C6FCBB700FE3B95 /* Onward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45ED98C1C6FCBB700FE3B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,12 +95,25 @@
 		E45ED9A71C6FCBB700FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45ED9AE1C6FCBCC00FE3B95 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
 		E45ED9B71C6FD1F100FE3B95 /* TienLenTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TienLenTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E45ED9B81C6FD1F200FE3B95 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
-		E45ED9BB1C6FD3A800FE3B95 /* RankTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTests.swift; sourceTree = "<group>"; };
-		E45ED9BD1C6FD40F00FE3B95 /* SuitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
-		E45ED9BF1C6FD43F00FE3B95 /* DeckTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
-		E45ED9C11C6FD51900FE3B95 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TienLenTests.swift; sourceTree = "<group>"; };
+		E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayingCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45ED9CD1C700DBE00FE3B95 /* PlayingCards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCards.h; sourceTree = "<group>"; };
+		E45ED9CF1C700DBE00FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45ED9D41C700DBE00FE3B95 /* PlayingCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayingCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45ED9DB1C700DBE00FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45ED9E41C700E6F00FE3B95 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		E45ED9E51C700E6F00FE3B95 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		E45ED9E61C700E6F00FE3B95 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E45ED9E71C700E6F00FE3B95 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		E45ED9E81C700E6F00FE3B95 /* Suit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
+		E45ED9EE1C700E8500FE3B95 /* PlayingCardsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlayingCardsTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E45ED9EF1C700E8500FE3B95 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		E45ED9F01C700E8500FE3B95 /* DeckTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
+		E45ED9F11C700E8500FE3B95 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		E45ED9F21C700E8500FE3B95 /* RankTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTests.swift; sourceTree = "<group>"; };
+		E45ED9F31C700E8500FE3B95 /* SuitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
+		E45ED9FB1C70104900FE3B95 /* OnwardTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnwardTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45ED9FA1C700EF800FE3B95 /* PlayingCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,16 +148,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45ED9C71C700DBE00FE3B95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45ED9D11C700DBE00FE3B95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45ED9D51C700DBE00FE3B95 /* PlayingCards.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		E45ED9521C6FC9A700FE3B95 = {
 			isa = PBXGroup;
 			children = (
-				E45ED95E1C6FC9A700FE3B95 /* TienLen */,
-				E45ED96A1C6FC9A700FE3B95 /* TienLenTests */,
 				E45ED98B1C6FCBB700FE3B95 /* Onward */,
 				E45ED9A41C6FCBB700FE3B95 /* OnwardTests */,
+				E45ED95E1C6FC9A700FE3B95 /* TienLen */,
+				E45ED96A1C6FC9A700FE3B95 /* TienLenTests */,
+				E45ED9CC1C700DBE00FE3B95 /* PlayingCards */,
+				E45ED9D81C700DBE00FE3B95 /* PlayingCardsTests */,
 				E45ED95D1C6FC9A700FE3B95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +186,8 @@
 				E45ED9661C6FC9A700FE3B95 /* TienLenTests.xctest */,
 				E45ED98A1C6FCBB700FE3B95 /* Onward.app */,
 				E45ED9A11C6FCBB700FE3B95 /* OnwardTests.xctest */,
+				E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */,
+				E45ED9D41C700DBE00FE3B95 /* PlayingCardsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				E45ED9831C6FCAB900FE3B95 /* TienLen.swift */,
-				E45ED9821C6FCA7C00FE3B95 /* Card Game Atoms */,
 				E45ED9781C6FC9DD00FE3B95 /* Supporting Files */,
 			);
 			path = TienLen;
@@ -167,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */,
-				E45ED9C31C6FD6E200FE3B95 /* Card Game Atoms Tests */,
 				E45ED9791C6FC9E400FE3B95 /* Supporting Files */,
 			);
 			path = TienLenTests;
@@ -191,18 +228,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E45ED9821C6FCA7C00FE3B95 /* Card Game Atoms */ = {
-			isa = PBXGroup;
-			children = (
-				E45ED9761C6FC9BE00FE3B95 /* Card.swift */,
-				E45ED97A1C6FC9F200FE3B95 /* Rank.swift */,
-				E45ED97C1C6FCA1800FE3B95 /* Suit.swift */,
-				E45ED97E1C6FCA2B00FE3B95 /* Deck.swift */,
-				E45ED9801C6FCA5300FE3B95 /* Game.swift */,
-			);
-			name = "Card Game Atoms";
-			sourceTree = "<group>";
-		};
 		E45ED98B1C6FCBB700FE3B95 /* Onward */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +242,7 @@
 		E45ED9A41C6FCBB700FE3B95 /* OnwardTests */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */,
 				E45ED9BA1C6FD22400FE3B95 /* Supporting Files */,
 			);
 			path = OnwardTests;
@@ -243,21 +269,54 @@
 		E45ED9BA1C6FD22400FE3B95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED9FB1C70104900FE3B95 /* OnwardTests-Bridging-Header.h */,
 				E45ED9A71C6FCBB700FE3B95 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E45ED9C31C6FD6E200FE3B95 /* Card Game Atoms Tests */ = {
+		E45ED9CC1C700DBE00FE3B95 /* PlayingCards */ = {
 			isa = PBXGroup;
 			children = (
-				E45ED9B81C6FD1F200FE3B95 /* CardTests.swift */,
-				E45ED9BB1C6FD3A800FE3B95 /* RankTests.swift */,
-				E45ED9BD1C6FD40F00FE3B95 /* SuitTests.swift */,
-				E45ED9BF1C6FD43F00FE3B95 /* DeckTests.swift */,
-				E45ED9C11C6FD51900FE3B95 /* GameTests.swift */,
+				E45ED9E41C700E6F00FE3B95 /* Card.swift */,
+				E45ED9E51C700E6F00FE3B95 /* Deck.swift */,
+				E45ED9E61C700E6F00FE3B95 /* Game.swift */,
+				E45ED9E71C700E6F00FE3B95 /* Rank.swift */,
+				E45ED9E81C700E6F00FE3B95 /* Suit.swift */,
+				E45ED9E21C700DD200FE3B95 /* Supporting Files */,
 			);
-			name = "Card Game Atoms Tests";
+			path = PlayingCards;
+			sourceTree = "<group>";
+		};
+		E45ED9D81C700DBE00FE3B95 /* PlayingCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E45ED9EF1C700E8500FE3B95 /* CardTests.swift */,
+				E45ED9F01C700E8500FE3B95 /* DeckTests.swift */,
+				E45ED9F11C700E8500FE3B95 /* GameTests.swift */,
+				E45ED9F21C700E8500FE3B95 /* RankTests.swift */,
+				E45ED9F31C700E8500FE3B95 /* SuitTests.swift */,
+				E45ED9E31C700DE500FE3B95 /* Supporting Files */,
+			);
+			path = PlayingCardsTests;
+			sourceTree = "<group>";
+		};
+		E45ED9E21C700DD200FE3B95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E45ED9CD1C700DBE00FE3B95 /* PlayingCards.h */,
+				E45ED9CF1C700DBE00FE3B95 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E45ED9E31C700DE500FE3B95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E45ED9EE1C700E8500FE3B95 /* PlayingCardsTests-Bridging-Header.h */,
+				E45ED9DB1C700DBE00FE3B95 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45ED9601C6FC9A700FE3B95 /* TienLen.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45ED9C81C700DBE00FE3B95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45ED9F91C700EDC00FE3B95 /* PlayingCards.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +414,42 @@
 			productReference = E45ED9A11C6FCBB700FE3B95 /* OnwardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E45ED9CA1C700DBE00FE3B95 /* PlayingCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45ED9DC1C700DBE00FE3B95 /* Build configuration list for PBXNativeTarget "PlayingCards" */;
+			buildPhases = (
+				E45ED9C61C700DBE00FE3B95 /* Sources */,
+				E45ED9C71C700DBE00FE3B95 /* Frameworks */,
+				E45ED9C81C700DBE00FE3B95 /* Headers */,
+				E45ED9C91C700DBE00FE3B95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayingCards;
+			productName = PlayingCards;
+			productReference = E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E45ED9D31C700DBE00FE3B95 /* PlayingCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45ED9DF1C700DBE00FE3B95 /* Build configuration list for PBXNativeTarget "PlayingCardsTests" */;
+			buildPhases = (
+				E45ED9D01C700DBE00FE3B95 /* Sources */,
+				E45ED9D11C700DBE00FE3B95 /* Frameworks */,
+				E45ED9D21C700DBE00FE3B95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E45ED9D71C700DBE00FE3B95 /* PBXTargetDependency */,
+			);
+			name = PlayingCardsTests;
+			productName = PlayingCardsTests;
+			productReference = E45ED9D41C700DBE00FE3B95 /* PlayingCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -370,6 +473,12 @@
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = E45ED9891C6FCBB700FE3B95;
 					};
+					E45ED9CA1C700DBE00FE3B95 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					E45ED9D31C700DBE00FE3B95 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 				};
 			};
 			buildConfigurationList = E45ED9561C6FC9A700FE3B95 /* Build configuration list for PBXProject "TienLen" */;
@@ -389,6 +498,8 @@
 				E45ED9651C6FC9A700FE3B95 /* TienLenTests */,
 				E45ED9891C6FCBB700FE3B95 /* Onward */,
 				E45ED9A01C6FCBB700FE3B95 /* OnwardTests */,
+				E45ED9CA1C700DBE00FE3B95 /* PlayingCards */,
+				E45ED9D31C700DBE00FE3B95 /* PlayingCardsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,6 +536,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45ED9C91C700DBE00FE3B95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45ED9D21C700DBE00FE3B95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,12 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45ED97F1C6FCA2B00FE3B95 /* Deck.swift in Sources */,
-				E45ED9811C6FCA5300FE3B95 /* Game.swift in Sources */,
-				E45ED9771C6FC9BE00FE3B95 /* Card.swift in Sources */,
 				E45ED9841C6FCAB900FE3B95 /* TienLen.swift in Sources */,
-				E45ED97D1C6FCA1800FE3B95 /* Suit.swift in Sources */,
-				E45ED97B1C6FC9F200FE3B95 /* Rank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,12 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45ED9C01C6FD43F00FE3B95 /* DeckTests.swift in Sources */,
-				E45ED9B91C6FD1F200FE3B95 /* CardTests.swift in Sources */,
-				E45ED9BC1C6FD3A800FE3B95 /* RankTests.swift in Sources */,
 				E45ED9C51C6FD77400FE3B95 /* TienLenTests.swift in Sources */,
-				E45ED9BE1C6FD40F00FE3B95 /* SuitTests.swift in Sources */,
-				E45ED9C21C6FD51900FE3B95 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +581,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45ED9FD1C70104900FE3B95 /* LibraryIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45ED9C61C700DBE00FE3B95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45ED9EA1C700E6F00FE3B95 /* Deck.swift in Sources */,
+				E45ED9ED1C700E6F00FE3B95 /* Suit.swift in Sources */,
+				E45ED9EC1C700E6F00FE3B95 /* Rank.swift in Sources */,
+				E45ED9EB1C700E6F00FE3B95 /* Game.swift in Sources */,
+				E45ED9E91C700E6F00FE3B95 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45ED9D01C700DBE00FE3B95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45ED9F51C700E8500FE3B95 /* DeckTests.swift in Sources */,
+				E45ED9F71C700E8500FE3B95 /* RankTests.swift in Sources */,
+				E45ED9F81C700E8500FE3B95 /* SuitTests.swift in Sources */,
+				E45ED9F61C700E8500FE3B95 /* GameTests.swift in Sources */,
+				E45ED9F41C700E8500FE3B95 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +626,11 @@
 			isa = PBXTargetDependency;
 			target = E45ED95B1C6FC9A700FE3B95 /* TienLen */;
 			targetProxy = E45ED9B21C6FCBF800FE3B95 /* PBXContainerItemProxy */;
+		};
+		E45ED9D71C700DBE00FE3B95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45ED9CA1C700DBE00FE3B95 /* PlayingCards */;
+			targetProxy = E45ED9D61C700DBE00FE3B95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -687,10 +832,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OnwardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.panko.OnwardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnwardTests/OnwardTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Onward.app/Onward";
 			};
 			name = Debug;
@@ -699,11 +847,73 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OnwardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.panko.OnwardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnwardTests/OnwardTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Onward.app/Onward";
+			};
+			name = Release;
+		};
+		E45ED9DD1C700DBE00FE3B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PlayingCards/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.panko.PlayingCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E45ED9DE1C700DBE00FE3B95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PlayingCards/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.panko.PlayingCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E45ED9E01C700DBE00FE3B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PlayingCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.panko.PlayingCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayingCardsTests/PlayingCardsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E45ED9E11C700DBE00FE3B95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PlayingCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.panko.PlayingCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayingCardsTests/PlayingCardsTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -748,6 +958,22 @@
 			buildConfigurations = (
 				E45ED9AC1C6FCBB700FE3B95 /* Debug */,
 				E45ED9AD1C6FCBB700FE3B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E45ED9DC1C700DBE00FE3B95 /* Build configuration list for PBXNativeTarget "PlayingCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45ED9DD1C700DBE00FE3B95 /* Debug */,
+				E45ED9DE1C700DBE00FE3B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E45ED9DF1C700DBE00FE3B95 /* Build configuration list for PBXNativeTarget "PlayingCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45ED9E01C700DBE00FE3B95 /* Debug */,
+				E45ED9E11C700DBE00FE3B95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

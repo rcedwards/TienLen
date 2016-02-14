@@ -6,9 +6,12 @@
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-// TODO: rcedwards rename module and move into TienLen struct
-public typealias TienLenCard = Card
+import PlayingCards
+
+
 public struct TienLen: Game {
+
+    public typealias Card = PlayingCards.Card
 
     // MARK: - Member Variables
 
@@ -83,8 +86,8 @@ public struct TienLen: Game {
     }
 }
 
-extension TienLenCard: Comparable { }
-public func <(lhs: TienLenCard, rhs: TienLenCard) -> Bool {
+extension Card: Comparable { }
+public func <(lhs: Card, rhs: Card) -> Bool {
     let rankOrder = TienLen.rankOrder
     let suitOrder = TienLen.suitOrder
 
