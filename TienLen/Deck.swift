@@ -7,7 +7,13 @@
 //
 
 public struct Deck {
-    public let cards: Set<Card>
+    public private(set) var cards: Set<Card>
+    public var availableCards: Set<Card> {
+        return cards.subtract(consumedCards)
+    }
+    private var consumedCards = Set<Card>()
+
+    // MARK: - Lifecycle
 
     public init() {
         var cardSet = Set<Card>()
@@ -18,4 +24,13 @@ public struct Deck {
         }
         cards = cardSet
     }
+
+    public mutating func next() -> Card? {
+        if let card = availableCards.first {
+            consumedCards.insert(card)
+            return card
+        }
+        return nil
+    }
+}
 }

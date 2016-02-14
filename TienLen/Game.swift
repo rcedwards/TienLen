@@ -10,7 +10,7 @@ public typealias Hand = Set<Card>
 
 public protocol Game {
     var deck: Deck { get }
-    var hands: [Hand] { get }
+    var playerHands: [Hand] { get }
 
     static var rankOrder: Array<Rank> { get }
     static var suitOrder: Array<Suit> { get }

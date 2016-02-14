@@ -11,16 +11,42 @@ import XCTest
 @testable import TienLen
 
 class TienLenTests: XCTestCase {
-    
-    var currentGame: TienLen!
+
     let deck = Deck()
 
-    override func setUp() {
-        currentGame = TienLen(deck: deck)
+    func testNumberOfPlayers() {
+        do {
+            let _ = try TienLen(numberOfPlayers: 2)
+            let _ = try TienLen(numberOfPlayers: 3)
+            let _ = try TienLen(numberOfPlayers: 4)
+        } catch {
+            XCTFail("Unexpected error in test: \(error)")
+        }
+
+        do {
+            let _ = try TienLen(numberOfPlayers: 0)
+            XCTFail("0 is not a valid number of players")
+        } catch {}
+        do {
+            let _ = try TienLen(numberOfPlayers: 1)
+            XCTFail("1 is not a valid number of players")
+        } catch {}
+        do {
+            let _ = try TienLen(numberOfPlayers: 5)
+            XCTFail("5 is not a valid number of players")
+        } catch {}
     }
 
-    func testInitialization() {
-        XCTAssertNotNil(currentGame)
+    func testDealingHands() {
+        do {
+            let game = try TienLen(numberOfPlayers: 4)
+            XCTAssertEqual(game.playerHands.count, 4)
+            for hand in game.playerHands {
+                XCTAssertEqual(hand.count, 13)
+            }
+        } catch {
+            XCTFail("Unexpected error in test: \(error)")
+        }
     }
 
     func testSuitOrder() {
