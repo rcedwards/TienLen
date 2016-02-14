@@ -52,6 +52,7 @@ class TienLenTests: XCTestCase {
     }
 
     func testSuitOrder() {
+        XCTAssertTrue(TienLen.validateCardOrder())
         let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
         let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
         let twoOfClub = TienLen.Card(rank: .Two, suit: .Club)

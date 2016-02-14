@@ -13,10 +13,9 @@ import XCTest
 class GameTests: XCTestCase {
     
     func testValidateCardOrder() {
-        let deck = Deck()
-        XCTAssertFalse(IncompleteGameStub(deck: deck).validateCardOrder())
-        XCTAssertFalse(DuplicateRanksGameStub(deck: deck).validateCardOrder())
-        XCTAssertTrue(ValidGameStub(deck: deck).validateCardOrder())
+        XCTAssertFalse(IncompleteGameStub.validateCardOrder())
+        XCTAssertFalse(DuplicateRanksGameStub.validateCardOrder())
+        XCTAssertTrue(ValidGameStub.validateCardOrder())
     }
     
 }
