@@ -4,18 +4,12 @@ import TienLen
 
 //: Tiến lên - https://en.wikipedia.org/wiki/Tien_len
 
-let deck = Deck()
-for card in deck.cards {
-    print(card)
+do {
+    let myGame = try TienLen(numberOfPlayers: 2)
+    myGame.validateCardOrder()
+    for card in myGame.deck.cards {
+        print(card)
+    }
+} catch {
+    print("\(error)")
 }
-
-let aceOfSpades = TienLenCard(rank: .Ace, suit: .Spade)
-let twoOfHearts = TienLenCard(rank: .Two, suit: .Heart)
-if aceOfSpades < twoOfHearts {
-    print("Correct")
-}
-
-let myGame = TienLen(deck: deck)
-myGame.validateCardOrder()
-
-

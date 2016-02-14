@@ -6,13 +6,20 @@
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-public typealias TienLenCard = Card
+import PlayingCards
+
+
 public struct TienLen: Game {
+
+    public typealias Card = PlayingCards.Card
 
     // MARK: - Member Variables
 
-    public let deck: Deck
-    public var hands = [Hand]()
+    public var deck: Deck
+    public var activeHand: Hand?
+    public private(set) var playerHands = [Hand]()
+
+    private let numberOfPlayers: Int
 
     // MARK: - Static Properties
 
@@ -43,15 +50,44 @@ public struct TienLen: Game {
         ]
     }
 
+    private static let cardsPerPlayer = 13
+    private static let acceptablePlayerRange = 2...4
+
     // MARK: - Lifecycle
 
-    public init(deck: Deck) {
+    public init(numberOfPlayers: Int, deck: Deck = Deck()) throws {
+        guard TienLen.acceptablePlayerRange.contains(numberOfPlayers) else {
+            throw Error.InvalidNumberOfPlayers(numberOfPlayers)
+        }
+        self.numberOfPlayers = numberOfPlayers
         self.deck = deck
+        dealHands()
+    }
+
+    private mutating func dealHands() {
+        for _ in 0..<numberOfPlayers {
+            playerHands.append(newPlayerHand())
+        }
+    }
+
+    private mutating func newPlayerHand() -> Hand {
+        var playerHand = Hand()
+        for _ in 0..<TienLen.cardsPerPlayer {
+            guard let nextCard = deck.next() else {
+                fatalError("Should never run out of cards while dealing")
+            }
+            playerHand.insert(nextCard)
+        }
+        return playerHand
+    }
+
+    public enum Error: ErrorType {
+        case InvalidNumberOfPlayers(Int)
     }
 }
 
-extension TienLenCard: Comparable { }
-public func <(lhs: TienLenCard, rhs: TienLenCard) -> Bool {
+extension Card: Comparable { }
+public func <(lhs: Card, rhs: Card) -> Bool {
     let rankOrder = TienLen.rankOrder
     let suitOrder = TienLen.suitOrder
 

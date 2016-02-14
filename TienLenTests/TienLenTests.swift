@@ -8,28 +8,56 @@
 
 import XCTest
 
+import PlayingCards
+
 @testable import TienLen
 
 class TienLenTests: XCTestCase {
-    
-    var currentGame: TienLen!
+
     let deck = Deck()
 
-    override func setUp() {
-        currentGame = TienLen(deck: deck)
+    func testNumberOfPlayers() {
+        do {
+            let _ = try TienLen(numberOfPlayers: 2)
+            let _ = try TienLen(numberOfPlayers: 3)
+            let _ = try TienLen(numberOfPlayers: 4)
+        } catch {
+            XCTFail("Unexpected error in test: \(error)")
+        }
+
+        do {
+            let _ = try TienLen(numberOfPlayers: 0)
+            XCTFail("0 is not a valid number of players")
+        } catch {}
+        do {
+            let _ = try TienLen(numberOfPlayers: 1)
+            XCTFail("1 is not a valid number of players")
+        } catch {}
+        do {
+            let _ = try TienLen(numberOfPlayers: 5)
+            XCTFail("5 is not a valid number of players")
+        } catch {}
     }
 
-    func testInitialization() {
-        XCTAssertNotNil(currentGame)
+    func testDealingHands() {
+        do {
+            let game = try TienLen(numberOfPlayers: 4)
+            XCTAssertEqual(game.playerHands.count, 4)
+            for hand in game.playerHands {
+                XCTAssertEqual(hand.count, 13)
+            }
+        } catch {
+            XCTFail("Unexpected error in test: \(error)")
+        }
     }
 
     func testSuitOrder() {
-        let twoOfHearts = TienLenCard(rank: .Two, suit: .Heart)
-        let twoOfSpades = TienLenCard(rank: .Two, suit: .Spade)
-        let twoOfClub = TienLenCard(rank: .Two, suit: .Club)
-        let twoOfDiamonds = TienLenCard(rank: .Two, suit: .Diamond)
+        let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
+        let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
+        let twoOfClub = TienLen.Card(rank: .Two, suit: .Club)
+        let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
 
-        let aceOfDiamonds = TienLenCard(rank: .Ace, suit: .Diamond)
+        let aceOfDiamonds = TienLen.Card(rank: .Ace, suit: .Diamond)
 
         XCTAssertGreaterThan(twoOfDiamonds, twoOfClub)
         XCTAssertGreaterThan(twoOfHearts, twoOfDiamonds)

@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import TienLen
+@testable import PlayingCards
 
 class CardTests: XCTestCase {
 
@@ -22,5 +22,12 @@ class CardTests: XCTestCase {
 
         XCTAssertNotEqual(aceOfSpades.hashValue, aceOfHearts.hashValue)
         XCTAssertEqual(aceOfHearts.hashValue, aceOfHearts2.hashValue)
+    }
+
+    func testDescription() {
+        let expectedDescription = "A ♥"
+        let card = Card(rank: .Ace, suit: .Heart)
+        XCTAssertEqual(expectedDescription, card.description)
+        XCTAssertEqual(expectedDescription, card.debugDescription)
     }
 }

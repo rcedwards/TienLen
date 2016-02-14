@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import TienLen
+@testable import PlayingCards
 
 class GameTests: XCTestCase {
     
@@ -22,7 +22,7 @@ class GameTests: XCTestCase {
 
 struct ValidGameStub: Game {
     var deck: Deck
-    var hands = [Hand]()
+    var playerHands = [Hand]()
 
     init(deck: Deck) {
         self.deck = deck
@@ -42,7 +42,7 @@ struct ValidGameStub: Game {
 
 struct InvalidGameStub: Game {
     var deck: Deck
-    var hands = [Hand]()
+    var playerHands = [Hand]()
 
     init(deck: Deck) {
         self.deck = deck
