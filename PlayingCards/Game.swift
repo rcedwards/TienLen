@@ -18,7 +18,12 @@ public protocol Game {
 
 public extension Game {
     public func validateCardOrder() -> Bool {
-        let orderCount = (self.dynamicType.rankOrder.count * self.dynamicType.suitOrder.count)
-        return (orderCount == deck.cards.count)
+        let ranks = self.dynamicType.rankOrder
+        let suits = self.dynamicType.suitOrder
+        let suitSet = Set(suits)
+        let rankSet = Set(ranks)
+        let exclusiveCount = rankSet.count * suitSet.count
+        let orderCount = ranks.count * suits.count
+        return (orderCount == deck.cards.count && exclusiveCount == deck.cards.count)
     }
 }

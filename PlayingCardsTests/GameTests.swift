@@ -14,7 +14,8 @@ class GameTests: XCTestCase {
     
     func testValidateCardOrder() {
         let deck = Deck()
-        XCTAssertFalse(InvalidGameStub(deck: deck).validateCardOrder())
+        XCTAssertFalse(IncompleteGameStub(deck: deck).validateCardOrder())
+        XCTAssertFalse(DuplicateRanksGameStub(deck: deck).validateCardOrder())
         XCTAssertTrue(ValidGameStub(deck: deck).validateCardOrder())
     }
     
@@ -29,8 +30,19 @@ struct ValidGameStub: Game {
     }
 
     static var rankOrder: Array<Rank> = [
-        .Ace, .Two, .Jack, .Queen, .Four, .Nine,
-        .King, .Five, .Eight, .Three, .Five, .Six, .Seven
+        .Ace,
+        .Two,
+        .Jack,
+        .Queen,
+        .Four,
+        .Nine,
+        .King,
+        .Ten,
+        .Eight,
+        .Three,
+        .Five,
+        .Six,
+        .Seven
     ]
     static var suitOrder: Array<Suit> = [
         .Heart,
@@ -40,7 +52,38 @@ struct ValidGameStub: Game {
     ]
 }
 
-struct InvalidGameStub: Game {
+struct DuplicateRanksGameStub: Game {
+    var deck: Deck
+    var playerHands = [Hand]()
+
+    init(deck: Deck) {
+        self.deck = deck
+    }
+
+    static var rankOrder: Array<Rank> = [
+        .Ace,
+        .Two,
+        .Jack,
+        .Queen,
+        .Four,
+        .Nine,
+        .King,
+        .Five,
+        .Eight,
+        .Three,
+        .Five,
+        .Six,
+        .Seven
+    ]
+    static var suitOrder: Array<Suit> = [
+        .Heart,
+        .Spade,
+        .Diamond,
+        .Club
+    ]
+}
+
+struct IncompleteGameStub: Game {
     var deck: Deck
     var playerHands = [Hand]()
 
