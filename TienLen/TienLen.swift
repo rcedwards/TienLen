@@ -8,10 +8,10 @@
 
 import PlayingCards
 
-
 public struct TienLen: Game {
 
     public typealias Card = PlayingCards.Card
+    public typealias Hand = Set<Card>
 
     // MARK: - Member Variables
 
@@ -85,6 +85,8 @@ public struct TienLen: Game {
         case InvalidNumberOfPlayers(Int)
     }
 }
+
+// MARK: - Card Order
 
 extension Card: Comparable { }
 public func <(lhs: Card, rhs: Card) -> Bool {
