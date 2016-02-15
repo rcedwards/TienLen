@@ -27,7 +27,8 @@ extension SequenceType where Generator.Element == Card {
     public var containsInstantWin: Bool {
         return (
             containsFourTwos() ||
-            containsSixPairs()
+            containsSixPairs() ||
+            containsThreeTriples()
         )
     }
 
@@ -36,18 +37,22 @@ extension SequenceType where Generator.Element == Card {
     }
 
     private func containsSixPairs() -> Bool {
-        return pairs().count == 6
+        return combos().count == 6
     }
 
-    private func pairs() -> Set<Combo> {
-        var pairs = Set<Combo>()
+    private func containsThreeTriples() -> Bool {
+        return combos().filter() { $0.count >= 3 }.count >= 3
+    }
+
+    private func combos() -> Set<Combo> {
+        var combos = Set<Combo>()
         for card in self {
             let matches = filter() { $0.rank == card.rank }
             if matches.count > 0 {
                 let newCombo = matches.reduce(Combo([card])) { $0.union(CollectionOfOne($1)) }
-                pairs.insert(newCombo)
+                combos.insert(newCombo)
             }
         }
-        return pairs
+        return combos
     }
 }

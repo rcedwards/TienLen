@@ -12,14 +12,17 @@ import XCTest
 
 class HandsTests: XCTestCase {
 
-    func testInstantWins() {
+
+    func testFourTwosInstantWin() {
         let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
         let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
         let twoOfClubs = TienLen.Card(rank: .Two, suit: .Club)
         let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
         let fourTwos = TienLen.Hand([twoOfHearts, twoOfSpades, twoOfClubs, twoOfDiamonds])
         XCTAssertTrue(fourTwos.containsInstantWin)
+    }
 
+    func testSixPairsInstantWin() {
         let sixPairs = TienLen.Hand([
             TienLen.Card(rank: .Four, suit: .Heart),
             TienLen.Card(rank: .Four, suit: .Spade),
@@ -34,8 +37,29 @@ class HandsTests: XCTestCase {
             TienLen.Card(rank: .Two, suit: .Heart),
             TienLen.Card(rank: .Two, suit: .Diamond),
             TienLen.Card(rank: .Two, suit: .Spade)
-        ])
+            ])
+        XCTAssertEqual(sixPairs.count, 13)
         XCTAssertTrue(sixPairs.containsInstantWin)
+    }
+
+    func testThreeTriplesInstantWin() {
+        let threeTriples = TienLen.Hand([
+            TienLen.Card(rank: .Four, suit: .Heart),
+            TienLen.Card(rank: .Four, suit: .Spade),
+            TienLen.Card(rank: .Four, suit: .Club),
+            TienLen.Card(rank: .Ten, suit: .Diamond),
+            TienLen.Card(rank: .Ten, suit: .Club),
+            TienLen.Card(rank: .Ten, suit: .Spade),
+            TienLen.Card(rank: .King, suit: .Diamond),
+            TienLen.Card(rank: .King, suit: .Club),
+            TienLen.Card(rank: .King, suit: .Spade),
+            TienLen.Card(rank: .Ace, suit: .Heart),
+            TienLen.Card(rank: .Three, suit: .Heart),
+            TienLen.Card(rank: .Five, suit: .Diamond),
+            TienLen.Card(rank: .Six, suit: .Spade)
+            ])
+        XCTAssertEqual(threeTriples.count, 13)
+        XCTAssertTrue(threeTriples.containsInstantWin)
     }
 
 }
