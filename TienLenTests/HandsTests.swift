@@ -19,6 +19,23 @@ class HandsTests: XCTestCase {
         let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
         let fourTwos = TienLen.Hand([twoOfHearts, twoOfSpades, twoOfClubs, twoOfDiamonds])
         XCTAssertTrue(fourTwos.containsInstantWin)
+
+        let sixPairs = TienLen.Hand([
+            TienLen.Card(rank: .Four, suit: .Heart),
+            TienLen.Card(rank: .Four, suit: .Spade),
+            TienLen.Card(rank: .Three, suit: .Heart),
+            TienLen.Card(rank: .Three, suit: .Diamond),
+            TienLen.Card(rank: .Ten, suit: .Club),
+            TienLen.Card(rank: .Ten, suit: .Spade),
+            TienLen.Card(rank: .King, suit: .Diamond),
+            TienLen.Card(rank: .King, suit: .Club),
+            TienLen.Card(rank: .Ace, suit: .Spade),
+            TienLen.Card(rank: .Ace, suit: .Heart),
+            TienLen.Card(rank: .Two, suit: .Heart),
+            TienLen.Card(rank: .Two, suit: .Diamond),
+            TienLen.Card(rank: .Two, suit: .Spade)
+        ])
+        XCTAssertTrue(sixPairs.containsInstantWin)
     }
 
 }
