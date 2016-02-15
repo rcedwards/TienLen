@@ -26,11 +26,22 @@ public struct Deck {
     }
 
     public mutating func next() -> Card? {
-        if let card = availableCards.first {
+        if let card = availableCards.randomElement() {
             consumedCards.insert(card)
             return card
         }
         return nil
+    }
+}
+
+private extension Set {
+    private func randomElement() -> Element? {
+        let random = Int(arc4random_uniform(UInt32(count)))
+        let index = startIndex.advancedBy(random)
+        guard indices.contains(index) else {
+            return nil
+        }
+        return self[index]
     }
 }
 
