@@ -8,43 +8,59 @@
 
 import PlayingCards
 
-private typealias Combo = Set<Card>
+public typealias Combo = Set<TienLen.Card>
+public typealias Run = Array<TienLen.Card>
 
-extension SequenceType where Generator.Element == Card {
+private let MinimumRunCount = 3
 
-    // MARK: - Instant Wins
+extension SequenceType where Generator.Element == TienLen.Card {
 
-    /*
-    Four 2s
-    Six pairs (In sequence, Ex. 44,55,66,77,88,99)
-    Three triples (In sequence, Ex. 444,555,666) (three triples are rarer than six pairs).
-
-    Dragon's Head (Dragon): A special sequence that runs from 3 through ace. A dragon can only be defeated by another dragon of higher suit. A dragon of hearts can't be defeated. This type of sequence is the longest in the game. The dragon is the sequence that has all individual cards, like 3♠ 4♠ 5 ♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♠ 2♠.
-
-    The last instant win occasion, ultimate dragon, is the most difficult to attain. The ultimate dragon must contain two things in order for the player to receive an automatic victory: the 3♠, and the A♥. These two cards are essential in an ultimate dragon, because the three of spades commences the game, and the player can run the sequence straight to the ace of hearts. This makes the entire dragon completely unstoppable, therefore leaving the player with one remaining card, resulting in a victory.
-    */
-
-    public var containsInstantWin: Bool {
-        return (
-            containsFourTwos() ||
-            containsSixPairs() ||
-            containsThreeTriples()
-        )
+    public func longestRun() -> Run? {
+        return runs().sort { $0.0.count > $0.1.count }.first
     }
 
-    private func containsFourTwos() -> Bool {
-        return filter() { $0.rank == .Two }.count == 4
+    public func runs() -> [Run] {
+        var runs = [Run]()
+
+        var currentRun: Run?
+
+        let sortedCards = Array(self).sort() { $0 < $1 }
+        var remainingCards = Set(self)
+
+        for card in sortedCards where remainingCards.contains(card) {
+
+            var currentRank = card.rank
+
+            while let nextRank = nextRank(currentRank) {
+
+                let successors = remainingCards.filter() { $0.rank == nextRank }
+                if let nextCard = successors.first {
+                    if currentRun != nil {
+                        currentRun?.append(nextCard)
+                    } else {
+                        currentRun = Run([card, nextCard])
+                    }
+                } else {
+                    break
+                }
+
+                currentRank = nextRank
+
+            }
+            
+            if let currentRun = currentRun where currentRun.count >= MinimumRunCount {
+                runs.append(currentRun)
+                for card in currentRun {
+                    remainingCards.remove(card)
+                }
+            }
+            currentRun = nil
+
+        }
+        return runs
     }
 
-    private func containsSixPairs() -> Bool {
-        return combos().count == 6
-    }
-
-    private func containsThreeTriples() -> Bool {
-        return combos().filter() { $0.count >= 3 }.count >= 3
-    }
-
-    private func combos() -> Set<Combo> {
+    public func combos() -> Set<Combo> {
         var combos = Set<Combo>()
         for card in self {
             let matches = filter() { $0.rank == card.rank }
@@ -54,5 +70,18 @@ extension SequenceType where Generator.Element == Card {
             }
         }
         return combos
+    }
+
+    private func nextRank(rank: Rank) -> Rank? {
+        let ranks = TienLen.rankOrder
+        guard let rankIndex = ranks.indexOf(rank) else {
+            fatalError("Rank index must be found")
+        }
+        let successorIndex = rankIndex.successor()
+
+        guard ranks.indices.contains(successorIndex) && successorIndex > 0 else {
+            return nil
+        }
+        return ranks[successorIndex]
     }
 }
