@@ -13,7 +13,7 @@ import PlayingCards
 @testable import TienLen
 
 class InstantWinTests: XCTestCase {
-    
+
     /*
     Insant Wins
 
@@ -30,12 +30,30 @@ class InstantWinTests: XCTestCase {
         let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
         let twoOfClubs = TienLen.Card(rank: .Two, suit: .Club)
         let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
-        let fourTwos = TienLen.Hand([twoOfHearts, twoOfSpades, twoOfClubs, twoOfDiamonds])
+
+        guard let fourTwos = TienLen.Hand(cards: [twoOfHearts,
+            twoOfSpades,
+            twoOfClubs,
+            twoOfDiamonds,
+            TienLen.Card(rank: .Ace, suit: .Spade),
+            TienLen.Card(rank: .Five, suit: .Spade),
+            TienLen.Card(rank: .Nine, suit: .Spade),
+            TienLen.Card(rank: .Jack, suit: .Spade),
+            TienLen.Card(rank: .Three, suit: .Spade),
+            TienLen.Card(rank: .Three, suit: .Heart),
+            TienLen.Card(rank: .Three, suit: .Diamond),
+            TienLen.Card(rank: .Six, suit: .Spade),
+            TienLen.Card(rank: .Jack, suit: .Diamond)
+            ]) else {
+                XCTFail("Failed to create hand")
+                return
+        }
+
         XCTAssertTrue(fourTwos.containsInstantWin)
     }
 
     func testSixPairsInstantWin() {
-        let sixPairs = TienLen.Hand([
+        guard let sixPairs = TienLen.Hand(cards: [
             TienLen.Card(rank: .Four, suit: .Heart),
             TienLen.Card(rank: .Four, suit: .Spade),
             TienLen.Card(rank: .Three, suit: .Heart),
@@ -49,13 +67,15 @@ class InstantWinTests: XCTestCase {
             TienLen.Card(rank: .Two, suit: .Heart),
             TienLen.Card(rank: .Two, suit: .Diamond),
             TienLen.Card(rank: .Two, suit: .Spade)
-            ])
-        XCTAssertEqual(sixPairs.count, 13)
+            ]) else {
+                XCTFail("Failed to create hand")
+                return
+        }
         XCTAssertTrue(sixPairs.containsInstantWin)
     }
 
     func testThreeTriplesInstantWin() {
-        let threeTriples = TienLen.Hand([
+        guard let threeTriples = TienLen.Hand(cards: [
             TienLen.Card(rank: .Four, suit: .Heart),
             TienLen.Card(rank: .Four, suit: .Spade),
             TienLen.Card(rank: .Four, suit: .Club),
@@ -69,13 +89,15 @@ class InstantWinTests: XCTestCase {
             TienLen.Card(rank: .Three, suit: .Heart),
             TienLen.Card(rank: .Five, suit: .Diamond),
             TienLen.Card(rank: .Six, suit: .Spade)
-            ])
-        XCTAssertEqual(threeTriples.count, 13)
+            ]) else {
+                XCTFail("Failed to create hand")
+                return
+        }
         XCTAssertTrue(threeTriples.containsInstantWin)
     }
 
     func testUltimateDragonsHead() {
-        let ultimateDragon = TienLen.Hand([
+        guard let ultimateDragon = TienLen.Hand(cards: [
             TienLen.Card(rank: .Three, suit: .Spade),
             TienLen.Card(rank: .Four, suit: .Spade),
             TienLen.Card(rank: .Five, suit: .Club),
@@ -89,8 +111,10 @@ class InstantWinTests: XCTestCase {
             TienLen.Card(rank: .King, suit: .Heart),
             TienLen.Card(rank: .Ace, suit: .Heart),
             TienLen.Card(rank: .Two, suit: .Spade)
-            ])
-        XCTAssertEqual(ultimateDragon.count, 13)
+            ]) else {
+                XCTFail("Failed to create hand")
+                return
+        }
         XCTAssertTrue(ultimateDragon.containsInstantWin)
     }
 }

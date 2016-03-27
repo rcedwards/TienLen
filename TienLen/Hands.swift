@@ -13,13 +13,21 @@ public typealias Run = Array<TienLen.Card>
 
 private let MinimumRunCount = 3
 
+// MARK: - Hands
+
+extension TienLen.Hand {
+    public var runs: [Run] { return cards.runs }
+    public var longestRun: Run? { return cards.longestRun }
+    public var combos: Set<Combo> { return cards.combos }
+}
+
 extension SequenceType where Generator.Element == TienLen.Card {
 
-    public func longestRun() -> Run? {
-        return runs().sort { $0.0.count > $0.1.count }.first
+    public var longestRun: Run? {
+        return runs.sort { $0.0.count > $0.1.count }.first
     }
 
-    public func runs() -> [Run] {
+    public var runs: [Run] {
         var runs = [Run]()
 
         var currentRun: Run?
@@ -60,7 +68,7 @@ extension SequenceType where Generator.Element == TienLen.Card {
         return runs
     }
 
-    public func combos() -> Set<Combo> {
+    public var combos: Set<Combo> {
         var combos = Set<Combo>()
         for card in self {
             let matches = filter() { $0.rank == card.rank }
