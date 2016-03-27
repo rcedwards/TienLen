@@ -38,12 +38,12 @@ class HandsTests: XCTestCase {
         let longestRunCount = longestRun?.count ?? 0
         XCTAssertEqual(longestRunCount, 5)
     }
-    
+
     func testMinimumCardCount() {
         let hand = TienLen.Hand(cards: [TienLen.Card(rank: .Ten, suit: .Heart)])
         XCTAssertNil(hand, "Hand should not be created with less than 13 cards")
     }
-    
+
     func testMaximumCardCount() {
         let hand = TienLen.Hand(cards: [
             TienLen.Card(rank: .Three, suit: .Heart),
@@ -60,7 +60,7 @@ class HandsTests: XCTestCase {
             TienLen.Card(rank: .Four, suit: .Club),
             TienLen.Card(rank: .Jack, suit: .Diamond),
             TienLen.Card(rank: .Jack, suit: .Club)
-        ])
+            ])
         XCTAssertNil(hand, "Hand should not be created with any more than 13 cards.")
     }
 }

@@ -65,17 +65,17 @@ public struct TienLen: Game {
     public enum Error: ErrorType {
         case InvalidNumberOfPlayers(Int)
     }
-    
+
     public struct Hand {
         private static let CardsPerHand = 13
-        
+
         let cards: Set<Card>
-        
+
         public init?(cards: Set<Card>) {
             guard cards.count == Hand.CardsPerHand else {
                 return nil
             }
-            
+
             self.cards = cards
         }
     }
@@ -89,7 +89,7 @@ extension TienLen {
             playerHands.append(newPlayerHand())
         }
     }
-    
+
     private mutating func newPlayerHand() -> Hand {
         var cards = Set<Card>()
         for _ in 0..<TienLen.Hand.CardsPerHand {

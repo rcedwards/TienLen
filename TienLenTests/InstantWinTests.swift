@@ -13,24 +13,24 @@ import PlayingCards
 @testable import TienLen
 
 class InstantWinTests: XCTestCase {
-    
+
     /*
     Insant Wins
-    
+
     Four 2s
     Six pairs (In sequence, Ex. 44,55,66,77,88,99)
     Three triples (In sequence, Ex. 444,555,666) (three triples are rarer than six pairs).
     Dragon's Head (Dragon): A special sequence that runs from 3 through ace. A dragon can only be defeated by another dragon of higher suit. A dragon of hearts can't be defeated. This type of sequence is the longest in the game. The dragon is the sequence that has all individual cards, like 3♠ 4♠ 5 ♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♠ 2♠.
-    
+
     The last instant win occasion, ultimate dragon, is the most difficult to attain. The ultimate dragon must contain two things in order for the player to receive an automatic victory: the 3♠, and the A♥. These two cards are essential in an ultimate dragon, because the three of spades commences the game, and the player can run the sequence straight to the ace of hearts. This makes the entire dragon completely unstoppable, therefore leaving the player with one remaining card, resulting in a victory.
     */
-    
+
     func testFourTwosInstantWin() {
         let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
         let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
         let twoOfClubs = TienLen.Card(rank: .Two, suit: .Club)
         let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
-        
+
         guard let fourTwos = TienLen.Hand(cards: [twoOfHearts,
             twoOfSpades,
             twoOfClubs,
@@ -48,10 +48,10 @@ class InstantWinTests: XCTestCase {
                 XCTFail("Failed to create hand")
                 return
         }
-        
+
         XCTAssertTrue(fourTwos.containsInstantWin)
     }
-    
+
     func testSixPairsInstantWin() {
         guard let sixPairs = TienLen.Hand(cards: [
             TienLen.Card(rank: .Four, suit: .Heart),
@@ -73,7 +73,7 @@ class InstantWinTests: XCTestCase {
         }
         XCTAssertTrue(sixPairs.containsInstantWin)
     }
-    
+
     func testThreeTriplesInstantWin() {
         guard let threeTriples = TienLen.Hand(cards: [
             TienLen.Card(rank: .Four, suit: .Heart),
@@ -95,7 +95,7 @@ class InstantWinTests: XCTestCase {
         }
         XCTAssertTrue(threeTriples.containsInstantWin)
     }
-    
+
     func testUltimateDragonsHead() {
         guard let ultimateDragon = TienLen.Hand(cards: [
             TienLen.Card(rank: .Three, suit: .Spade),

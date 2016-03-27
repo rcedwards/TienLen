@@ -9,10 +9,10 @@
 // MARK: - Card Order
 
 extension TienLen.Card: Comparable { }
-public func <(lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
+public func < (lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
     let rankOrder = TienLen.rankOrder
     let suitOrder = TienLen.suitOrder
-    
+
     guard
         let lhsRankIndex = rankOrder.indexOf(lhs.rank),
         let rhsRankIndex = rankOrder.indexOf(rhs.rank),
@@ -20,7 +20,7 @@ public func <(lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
         let rhsSuitIndex = suitOrder.indexOf(rhs.suit) else {
             fatalError("Rank order and suit order should contain all possible types.")
     }
-    
+
     if lhs.rank != rhs.rank {
         return lhsRankIndex < rhsRankIndex
     } else {
