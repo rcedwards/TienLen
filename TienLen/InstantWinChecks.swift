@@ -10,6 +10,10 @@ import Foundation
 
 import PlayingCards
 
+extension TienLen.Hand {
+    public var containsInstantWin: Bool { return cards.containsInstantWin }
+}
+
 extension SequenceType where Generator.Element == TienLen.Card {
 
     // MARK: - Instant Wins
@@ -28,15 +32,15 @@ extension SequenceType where Generator.Element == TienLen.Card {
     }
 
     private func containsSixPairs() -> Bool {
-        return combos().count == 6
+        return combos.count == 6
     }
 
     private func containsThreeTriples() -> Bool {
-        return combos().filter() { $0.count >= 3 }.count >= 3
+        return combos.filter() { $0.count >= 3 }.count >= 3
     }
 
     private func containsUltimateDragonHead() -> Bool {
-        guard let run = longestRun() else {
+        guard let run = longestRun else {
             return false
         }
         let threeOfSpades = TienLen.Card(rank: .Three, suit: .Spade)
@@ -45,6 +49,6 @@ extension SequenceType where Generator.Element == TienLen.Card {
     }
 
     private func containsDragonHead() -> Bool {
-        return longestRun()?.count == 13
+        return longestRun?.count == 13
     }
 }

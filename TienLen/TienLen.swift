@@ -11,7 +11,6 @@ import PlayingCards
 public struct TienLen: Game {
 
     public typealias Card = PlayingCards.Card
-    public typealias Hand = Set<Card>
 
     // MARK: - Member Variables
 
@@ -50,7 +49,6 @@ public struct TienLen: Game {
         ]
     }
 
-    private static let cardsPerPlayer = 13
     private static let acceptablePlayerRange = 2...4
 
     // MARK: - Lifecycle
@@ -64,46 +62,45 @@ public struct TienLen: Game {
         dealHands()
     }
 
+    public enum Error: ErrorType {
+        case InvalidNumberOfPlayers(Int)
+    }
+    
+    public struct Hand {
+        private static let CardsPerHand = 13
+        
+        let cards: Set<Card>
+        
+        public init?(cards: Set<Card>) {
+            guard cards.count == Hand.CardsPerHand else {
+                return nil
+            }
+            
+            self.cards = cards
+        }
+    }
+}
+
+// MARK: - Dealing
+
+extension TienLen {
     private mutating func dealHands() {
         for _ in 0..<numberOfPlayers {
             playerHands.append(newPlayerHand())
         }
     }
-
+    
     private mutating func newPlayerHand() -> Hand {
-        var playerHand = Hand()
-        for _ in 0..<TienLen.cardsPerPlayer {
+        var cards = Set<Card>()
+        for _ in 0..<TienLen.Hand.CardsPerHand {
             guard let nextCard = deck.next() else {
                 fatalError("Should never run out of cards while dealing")
             }
-            playerHand.insert(nextCard)
+            cards.insert(nextCard)
         }
-        return playerHand
-    }
-
-    public enum Error: ErrorType {
-        case InvalidNumberOfPlayers(Int)
-    }
-}
-
-// MARK: - Card Order
-
-extension Card: Comparable { }
-public func <(lhs: Card, rhs: Card) -> Bool {
-    let rankOrder = TienLen.rankOrder
-    let suitOrder = TienLen.suitOrder
-
-    guard
-        let lhsRankIndex = rankOrder.indexOf(lhs.rank),
-        let rhsRankIndex = rankOrder.indexOf(rhs.rank),
-        let lhsSuitIndex = suitOrder.indexOf(lhs.suit),
-        let rhsSuitIndex = suitOrder.indexOf(rhs.suit) else {
-            fatalError("Rank order and suit order should contain all possible types.")
-    }
-
-    if lhs.rank != rhs.rank {
-        return lhsRankIndex < rhsRankIndex
-    } else {
-        return lhsSuitIndex < rhsSuitIndex
+        guard let hand = Hand(cards: cards) else {
+            fatalError("Failed to create player hand")
+        }
+        return hand
     }
 }

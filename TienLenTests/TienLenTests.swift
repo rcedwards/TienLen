@@ -43,9 +43,6 @@ class TienLenTests: XCTestCase {
         do {
             let game = try TienLen(numberOfPlayers: 4)
             XCTAssertEqual(game.playerHands.count, 4)
-            for hand in game.playerHands {
-                XCTAssertEqual(hand.count, 13)
-            }
         } catch {
             XCTFail("Unexpected error in test: \(error)")
         }
