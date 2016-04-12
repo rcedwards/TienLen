@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D4638A1D1CA82A43009F81C6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4638A1C1CA82A43009F81C6 /* Cards.swift */; };
+		E41CB0DC1CBAB414006F247F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0DB1CBAB414006F247F /* CardView.swift */; };
+		E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0F21CBC1B39006F247F /* MainViewController.swift */; };
 		E44C2DC71C713DC800C47C56 /* Hands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C2DC61C713DC800C47C56 /* Hands.swift */; };
 		E44C2DC91C713E2800C47C56 /* HandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C2DC81C713E2800C47C56 /* HandsTests.swift */; };
 		E45ED9601C6FC9A700FE3B95 /* TienLen.h in Headers */ = {isa = PBXBuildFile; fileRef = E45ED95F1C6FC9A700FE3B95 /* TienLen.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,9 @@
 
 /* Begin PBXFileReference section */
 		D4638A1C1CA82A43009F81C6 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		E41CB0DB1CBAB414006F247F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E41CB0DD1CBAB46F006F247F /* PlayingCardViews.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlayingCardViews.playground; sourceTree = "<group>"; };
+		E41CB0F21CBC1B39006F247F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E44C2DC61C713DC800C47C56 /* Hands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hands.swift; sourceTree = "<group>"; };
 		E44C2DC81C713E2800C47C56 /* HandsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandsTests.swift; sourceTree = "<group>"; };
 		E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TienLen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +181,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E41CB0D91CBAB3F4006F247F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E45ED9E41C700E6F00FE3B95 /* Card.swift */,
+				E45ED9E51C700E6F00FE3B95 /* Deck.swift */,
+				E45ED9E61C700E6F00FE3B95 /* Game.swift */,
+				E45ED9E71C700E6F00FE3B95 /* Rank.swift */,
+				E45ED9E81C700E6F00FE3B95 /* Suit.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E41CB0DA1CBAB3FA006F247F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E41CB0DB1CBAB414006F247F /* CardView.swift */,
+				E41CB0DD1CBAB46F006F247F /* PlayingCardViews.playground */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E45ED9521C6FC9A700FE3B95 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +294,7 @@
 			children = (
 				E45ED9941C6FCBB700FE3B95 /* Main.storyboard */,
 				E45ED9991C6FCBB700FE3B95 /* LaunchScreen.storyboard */,
+				E41CB0F21CBC1B39006F247F /* MainViewController.swift */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -293,11 +320,8 @@
 		E45ED9CC1C700DBE00FE3B95 /* PlayingCards */ = {
 			isa = PBXGroup;
 			children = (
-				E45ED9E41C700E6F00FE3B95 /* Card.swift */,
-				E45ED9E51C700E6F00FE3B95 /* Deck.swift */,
-				E45ED9E61C700E6F00FE3B95 /* Game.swift */,
-				E45ED9E71C700E6F00FE3B95 /* Rank.swift */,
-				E45ED9E81C700E6F00FE3B95 /* Suit.swift */,
+				E41CB0DA1CBAB3FA006F247F /* Views */,
+				E41CB0D91CBAB3F4006F247F /* Models */,
 				E45ED9E21C700DD200FE3B95 /* Supporting Files */,
 			);
 			path = PlayingCards;
@@ -594,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45ED98D1C6FCBB700FE3B95 /* AppDelegate.swift in Sources */,
+				E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +638,7 @@
 				E45ED9ED1C700E6F00FE3B95 /* Suit.swift in Sources */,
 				E45ED9EC1C700E6F00FE3B95 /* Rank.swift in Sources */,
 				E45ED9EB1C700E6F00FE3B95 /* Game.swift in Sources */,
+				E41CB0DC1CBAB414006F247F /* CardView.swift in Sources */,
 				E45ED9E91C700E6F00FE3B95 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
