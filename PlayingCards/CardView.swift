@@ -46,7 +46,7 @@ public class CardView: UIView {
     private let bottomRightSuitLabel = UILabel()
 
     private static let cornerRadiusProportion: CGFloat = 0.0625
-    private static let innerRectProportion: CGFloat = 0.65
+    private static let innerRectProportion: CGFloat = 0.60
     private static let rectHeightToWidthRatio: CGFloat = 0.719101124
     private static let labelPadding: CGFloat = 2
 
@@ -109,17 +109,14 @@ public class CardView: UIView {
 
     private func drawInnerHollowRectangle(rect: CGRect) {
         UIColor.redColor().setStroke()
-        let innerHeight = rect.height * CardView.innerRectProportion
-        let innerWidth = innerHeight * CardView.rectHeightToWidthRatio
-        let innerX = (rect.width - innerWidth) / 2
-        let innerY = (rect.height - innerHeight) / 2
-        let subRect = CGRect(x: innerX,
-                             y: innerY,
-                             width: innerWidth,
-                             height: innerHeight)
+
+        let subHeight = rect.height * CardView.innerRectProportion
+        let dy = (rect.height - subHeight) / 2
+        let dx = dy * CardView.rectHeightToWidthRatio
+        let subRect = CGRectInset(rect, dx, dy)
         let hollowRect = UIBezierPath(roundedRect: subRect,
-                                      cornerRadius: innerWidth * CardView.cornerRadiusProportion)
-        hollowRect.lineWidth = innerWidth * CardView.cornerRadiusProportion
+                                      cornerRadius: subRect.width * CardView.cornerRadiusProportion)
+        hollowRect.lineWidth = subRect.width * CardView.cornerRadiusProportion
         hollowRect.stroke()
     }
     
