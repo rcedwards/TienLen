@@ -19,7 +19,6 @@ public class CardView: UIView {
                 $0.text = rank
                 $0.sizeToFit()
             }
-            setNeedsUpdateConstraints()
         }
     }
     public var suit: String = "" {
@@ -28,7 +27,6 @@ public class CardView: UIView {
                 $0.text = suit
                 $0.sizeToFit()
             }
-            setNeedsUpdateConstraints()
         }
     }
     private var suitLabels: [UILabel] {
@@ -71,15 +69,14 @@ public class CardView: UIView {
     private func addSubviews() {
         allLabels.map() {
             $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.font = UIFont.cardFont()
             addSubview($0)
         }
     }
 
     private func configureSuitAndRankViews() {
-        let topLabels = [topLeftRankLabel, topLeftSuitLabel]
-        topLabels.map() {
-            $0.leadingAnchor.constraintEqualToAnchor(layoutMarginsGuide.leadingAnchor).active = true
-        }
+        topLeftRankLabel.leadingAnchor.constraintEqualToAnchor(layoutMarginsGuide.leadingAnchor).active = true
+        topLeftSuitLabel.centerXAnchor.constraintEqualToAnchor(topLeftRankLabel.centerXAnchor).active = true
         topLeftRankLabel.topAnchor.constraintEqualToAnchor(layoutMarginsGuide.topAnchor).active = true
         topLeftSuitLabel.topAnchor.constraintEqualToAnchor(topLeftRankLabel.bottomAnchor).active = true
 
@@ -87,8 +84,9 @@ public class CardView: UIView {
         bottomLabels.map() {
             let transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
             $0.transform = transform
-            $0.trailingAnchor.constraintEqualToAnchor(layoutMarginsGuide.trailingAnchor).active = true
         }
+        bottomRightRankLabel.trailingAnchor.constraintEqualToAnchor(layoutMarginsGuide.trailingAnchor).active = true
+        bottomRightSuitLabel.centerXAnchor.constraintEqualToAnchor(bottomRightRankLabel.centerXAnchor).active = true
         bottomRightSuitLabel.bottomAnchor.constraintEqualToAnchor(bottomRightRankLabel.topAnchor).active = true
         bottomRightRankLabel.bottomAnchor.constraintEqualToAnchor(layoutMarginsGuide.bottomAnchor).active = true
     }
@@ -119,7 +117,7 @@ public class CardView: UIView {
         hollowRect.lineWidth = subRect.width * CardView.cornerRadiusProportion
         hollowRect.stroke()
     }
-    
+
     public static override func requiresConstraintBasedLayout() -> Bool {
         return true
     }
