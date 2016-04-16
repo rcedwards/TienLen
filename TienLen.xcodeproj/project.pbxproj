@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4638A1D1CA82A43009F81C6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4638A1C1CA82A43009F81C6 /* Cards.swift */; };
+		E41027C71CC286B6008A6A46 /* UIColor+Onward.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */; };
 		E41CB0DC1CBAB414006F247F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0DB1CBAB414006F247F /* CardView.swift */; };
 		E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0F21CBC1B39006F247F /* MainViewController.swift */; };
 		E43ED8AC1CBD8BAB009DA52A /* UIFont+PlayingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		D4638A1C1CA82A43009F81C6 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Onward.swift"; sourceTree = "<group>"; };
 		E41CB0DB1CBAB414006F247F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E41CB0F21CBC1B39006F247F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+PlayingCards.swift"; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		E45ED99C1C6FCBB700FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45ED9A11C6FCBB700FE3B95 /* OnwardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnwardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45ED9A71C6FCBB700FE3B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E45ED9AE1C6FCBCC00FE3B95 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
 		E45ED9B71C6FD1F100FE3B95 /* TienLenTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TienLenTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TienLenTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E45ED9CB1C700DBE00FE3B95 /* PlayingCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayingCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +183,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E41027C81CC28773008A6A46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		E41CB0D91CBAB3F4006F247F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,9 +283,10 @@
 			isa = PBXGroup;
 			children = (
 				E45ED98C1C6FCBB700FE3B95 /* AppDelegate.swift */,
+				E41CB0F21CBC1B39006F247F /* MainViewController.swift */,
+				E41027C81CC28773008A6A46 /* Extensions */,
 				E45ED9B51C6FD09000FE3B95 /* Storyboards */,
 				E45ED9B61C6FD09800FE3B95 /* Supporting Files */,
-				E45ED9AE1C6FCBCC00FE3B95 /* Demo.playground */,
 			);
 			path = Onward;
 			sourceTree = "<group>";
@@ -295,7 +305,6 @@
 			children = (
 				E45ED9941C6FCBB700FE3B95 /* Main.storyboard */,
 				E45ED9991C6FCBB700FE3B95 /* LaunchScreen.storyboard */,
-				E41CB0F21CBC1B39006F247F /* MainViewController.swift */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -618,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41027C71CC286B6008A6A46 /* UIColor+Onward.swift in Sources */,
 				E45ED98D1C6FCBB700FE3B95 /* AppDelegate.swift in Sources */,
 				E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */,
 			);

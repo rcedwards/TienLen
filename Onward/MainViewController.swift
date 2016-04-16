@@ -9,6 +9,7 @@
 import UIKit
 
 import PlayingCards
+import TienLen
 
 class MainViewController: UIViewController {
 
@@ -17,7 +18,19 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cardView.suit = "♠"
-        cardView.rank = "K"
+        cardView.cardColor = UIColor.cardColor
+        cardView.cardHighlightColor = UIColor.cardHighlightColor
+        cardView.heartAndDiamondColor = UIColor.darkRedColor
+        cardView.clubAndSpadeColor = UIColor.slateColor
+        cardView.configure(.Ace, suit: .Heart)
+
+        do {
+            let myGame = try TienLen(numberOfPlayers: 2)
+            for card in myGame.deck.cards {
+                print(card)
+            }
+        } catch {
+            print("\(error)")
+        }
     }
 }
