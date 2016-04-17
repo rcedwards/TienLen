@@ -15,6 +15,7 @@ private let cardWidth: CGFloat = 86
 private let cardHeight: CGFloat = 120
 private let overlapMultiplier: CGFloat = 1.0 // 1.0 is no overlap 0.0 is full overlap
 private let lineBreakAfter: Int = 4
+private let padding: CGFloat = 2.0
 
 class MainViewController: UIViewController {
 
@@ -36,12 +37,12 @@ class MainViewController: UIViewController {
                 let dy: CGFloat
                 let dx: CGFloat
                 if lineBreak >= lineBreakAfter {
-                    dy = cardHeight
-                    dx = -(CGFloat(lineBreakAfter - 1) * (cardWidth * overlapMultiplier))
+                    dy = cardHeight + padding
+                    dx = -(CGFloat(lineBreakAfter - 1) * ((cardWidth * overlapMultiplier) + padding))
                     lineBreak = 0
                 } else {
                     dy = 0
-                    dx = cardWidth * overlapMultiplier
+                    dx = (cardWidth * overlapMultiplier) + padding
                 }
                 nextCardRect = nextCardRect.offsetBy(dx: dx, dy: dy)
             }
