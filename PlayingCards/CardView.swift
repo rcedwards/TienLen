@@ -124,7 +124,12 @@ extension CardView {
         super.drawRect(rect)
 
         drawCardBackground(rect)
-        drawInnerHollowRectangle(rect)
+        switch rank {
+        case .King, .Queen, .Jack:
+            drawInnerHollowRectangle(rect)
+        default:
+            break
+        }
     }
 
     private func drawCardBackground(rect: CGRect) {
