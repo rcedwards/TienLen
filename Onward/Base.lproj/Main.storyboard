@@ -16,25 +16,8 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJE-ch-T5A" userLabel="Card View" customClass="CardView" customModule="PlayingCards">
-                                <rect key="frame" x="228" y="200" width="144" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="FRa-vx-Bf4"/>
-                                    <constraint firstAttribute="height" constant="200" id="hNT-gB-toE"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CJE-ch-T5A" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Tl4-B7-yLL"/>
-                            <constraint firstItem="CJE-ch-T5A" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="vbJ-X4-U0J"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.45098039215686275" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="cardView" destination="CJE-ch-T5A" id="W3R-cj-8sM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
