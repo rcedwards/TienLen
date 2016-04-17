@@ -131,6 +131,7 @@
 		E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LibraryIntegrationTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E48144C41C8BCA5B000C91E9 /* InstantWinTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantWinTests.swift; sourceTree = "<group>"; };
 		E48144C61C8BCAFD000C91E9 /* InstantWinChecks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantWinChecks.swift; sourceTree = "<group>"; };
+		E4EC37D91CC2C2FC00FD9C28 /* CardViewPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CardViewPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +209,7 @@
 			children = (
 				E41CB0DB1CBAB414006F247F /* CardView.swift */,
 				E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */,
+				E4EC37D91CC2C2FC00FD9C28 /* CardViewPlayground.playground */,
 			);
 			name = Views;
 			sourceTree = "<group>";
