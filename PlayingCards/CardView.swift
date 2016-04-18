@@ -101,7 +101,6 @@ public class CardView: UIView {
     }
 
     private func setup() {
-        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clearColor()
 
         addSubviews()
@@ -125,7 +124,12 @@ extension CardView {
         super.drawRect(rect)
 
         drawCardBackground(rect)
-        drawInnerHollowRectangle(rect)
+        switch rank {
+        case .King, .Queen, .Jack:
+            drawInnerHollowRectangle(rect)
+        default:
+            break
+        }
     }
 
     private func drawCardBackground(rect: CGRect) {
@@ -160,6 +164,7 @@ extension CardView {
     private static let innerRectProportion: CGFloat = 0.60
     private static let rectHeightToWidthRatio: CGFloat = 0.719101124
     private static let labelPadding: CGFloat = 2
+    private static let intrinsicHeight: CGFloat = 50
 }
 
 // MARK: - Subview Layout
@@ -190,6 +195,10 @@ extension CardView {
         bottomRightSuitLabel.centerXAnchor.constraintEqualToAnchor(bottomRightRankLabel.centerXAnchor).active = true
         bottomRightSuitLabel.bottomAnchor.constraintEqualToAnchor(bottomRightRankLabel.topAnchor).active = true
         bottomRightRankLabel.bottomAnchor.constraintEqualToAnchor(layoutMarginsGuide.bottomAnchor).active = true
+    }
+
+    public override func intrinsicContentSize() -> CGSize {
+        return CGSize(width: CardView.intrinsicHeight * CardView.rectHeightToWidthRatio, height: CardView.intrinsicHeight)
     }
 }
 

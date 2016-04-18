@@ -69,7 +69,7 @@ public struct TienLen: Game {
     public struct Hand {
         private static let CardsPerHand = 13
 
-        let cards: Set<Card>
+        public let cards: Set<Card>
 
         public init?(cards: Set<Card>) {
             guard cards.count == Hand.CardsPerHand else {
