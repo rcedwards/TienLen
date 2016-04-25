@@ -76,6 +76,17 @@ public class CardView: UIView {
         }
     }
 
+    override public var frame: CGRect {
+        didSet {
+            switch frame.width {
+            case (0...100):
+                allLabels.map() { $0.font = UIFont.cardFont(10.0) }
+            default:
+                allLabels.map() { $0.font = UIFont.cardFont(15.0) }
+            }
+        }
+    }
+
     // MARK: - Subviews
 
     private let topLeftRankLabel = UILabel()
@@ -110,7 +121,6 @@ public class CardView: UIView {
     private func addSubviews() {
         allLabels.map() {
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.font = UIFont.cardFont()
             $0.textColor = labelColor
             addSubview($0)
         }
@@ -161,7 +171,7 @@ extension CardView {
 
 extension CardView {
     private static let cornerRadiusProportion: CGFloat = 0.0625
-    private static let innerRectProportion: CGFloat = 0.60
+    private static let innerRectProportion: CGFloat = 0.55
     private static let rectHeightToWidthRatio: CGFloat = 0.719101124
     private static let labelPadding: CGFloat = 2
     private static let intrinsicHeight: CGFloat = 50
