@@ -93,6 +93,7 @@ public class CardView: UIView {
     private let topLeftSuitLabel = UILabel()
     private let bottomRightRankLabel = UILabel()
     private let bottomRightSuitLabel = UILabel()
+    private let bodyRankView = CardBodyRankView()
 
     // MARK: - Lifecycle
 
@@ -116,6 +117,7 @@ public class CardView: UIView {
 
         addSubviews()
         configureSuitAndRankViews()
+        configureBodyView()
     }
 
     private func addSubviews() {
@@ -124,6 +126,8 @@ public class CardView: UIView {
             $0.textColor = labelColor
             addSubview($0)
         }
+        addSubview(bodyRankView)
+        bodyRankView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
@@ -207,6 +211,26 @@ extension CardView {
         bottomRightRankLabel.bottomAnchor.constraintEqualToAnchor(layoutMarginsGuide.bottomAnchor).active = true
     }
 
+    private func configureBodyView() {
+        bodyRankView.centerXAnchor.constraintEqualToAnchor(centerXAnchor).active = true
+        bodyRankView.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+        let widthConstraint = NSLayoutConstraint(item: bodyRankView,
+                                                 attribute: .Width,
+                                                 relatedBy: .Equal,
+                                                 toItem: self,
+                                                 attribute: .Width,
+                                                 multiplier: CardView.innerRectProportion,
+                                                 constant: 1)
+        let heightConstraint = NSLayoutConstraint(item: bodyRankView,
+                                                  attribute: .Height,
+                                                  relatedBy: .Equal,
+                                                  toItem: self,
+                                                  attribute: .Height,
+                                                  multiplier: CardView.innerRectProportion,
+                                                  constant: 1)
+        addConstraints([widthConstraint, heightConstraint])
+    }
+    
     public override func intrinsicContentSize() -> CGSize {
         return CGSize(width: CardView.intrinsicHeight * CardView.rectHeightToWidthRatio, height: CardView.intrinsicHeight)
     }

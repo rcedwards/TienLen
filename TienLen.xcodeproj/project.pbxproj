@@ -40,6 +40,7 @@
 		E45ED9FD1C70104900FE3B95 /* LibraryIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */; };
 		E48144C51C8BCA5B000C91E9 /* InstantWinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48144C41C8BCA5B000C91E9 /* InstantWinTests.swift */; };
 		E48144C71C8BCAFD000C91E9 /* InstantWinChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48144C61C8BCAFD000C91E9 /* InstantWinChecks.swift */; };
+		E4DFF44C1CD4FB2900FE5180 /* CardBodyRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFF44B1CD4FB2900FE5180 /* CardBodyRankView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		E45ED9FC1C70104900FE3B95 /* LibraryIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LibraryIntegrationTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E48144C41C8BCA5B000C91E9 /* InstantWinTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantWinTests.swift; sourceTree = "<group>"; };
 		E48144C61C8BCAFD000C91E9 /* InstantWinChecks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantWinChecks.swift; sourceTree = "<group>"; };
+		E4DFF44B1CD4FB2900FE5180 /* CardBodyRankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBodyRankView.swift; sourceTree = "<group>"; };
 		E4EC37D91CC2C2FC00FD9C28 /* CardViewPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CardViewPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				E41CB0DB1CBAB414006F247F /* CardView.swift */,
+				E4DFF44B1CD4FB2900FE5180 /* CardBodyRankView.swift */,
 				E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */,
 				E4EC37D91CC2C2FC00FD9C28 /* CardViewPlayground.playground */,
 			);
@@ -647,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DFF44C1CD4FB2900FE5180 /* CardBodyRankView.swift in Sources */,
 				E45ED9EA1C700E6F00FE3B95 /* Deck.swift in Sources */,
 				E45ED9ED1C700E6F00FE3B95 /* Suit.swift in Sources */,
 				E43ED8AC1CBD8BAB009DA52A /* UIFont+PlayingCards.swift in Sources */,
