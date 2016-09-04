@@ -7,16 +7,16 @@
 //
 
 public enum Suit {
-    case Club
-    case Heart
-    case Spade
-    case Diamond
+    case club
+    case heart
+    case spade
+    case diamond
 
     public static let allSuits: [Suit] = [
-        .Club,
-        .Heart,
-        .Spade,
-        .Diamond
+        .club,
+        .heart,
+        .spade,
+        .diamond
     ]
 }
 
@@ -29,13 +29,13 @@ extension Suit: CustomStringConvertible, CustomDebugStringConvertible {
     }
     public var _description: String {
         switch self {
-        case .Club:
+        case .club:
             return "♣"
-        case .Diamond:
+        case .diamond:
             return "♦"
-        case .Heart:
+        case .heart:
             return "♥"
-        case .Spade:
+        case .spade:
             return "♠"
         }
     }

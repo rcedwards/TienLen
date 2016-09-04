@@ -7,9 +7,9 @@
 //
 
 public struct Deck {
-    public private(set) var cards: Set<Card>
+    public fileprivate(set) var cards: Set<Card>
     public var availableCards: Set<Card> {
-        return cards.subtract(consumedCards)
+        return cards.subtracting(consumedCards)
     }
     private var consumedCards = Set<Card>()
 
@@ -35,13 +35,13 @@ public struct Deck {
 }
 
 private extension Set {
-    private func randomElement() -> Element? {
+    func randomElement() -> Element? {
         let random = Int(arc4random_uniform(UInt32(count)))
-        let index = startIndex.advancedBy(random)
-        guard indices.contains(index) else {
+        let array = Array(self)
+        guard array.indices.contains(random) else {
             return nil
         }
-        return self[index]
+        return array[random]
     }
 }
 

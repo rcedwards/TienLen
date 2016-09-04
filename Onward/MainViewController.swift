@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
             var nextCardRect = CGRect(x: 0, y: 40, width: cardWidth, height: cardHeight)
             var lineBreak = 0
             for card in firstHand.cards {
-                view.addSubview(cardViewWithFrame(nextCardRect, card: card))
+                view.addSubview(cardView(frame: nextCardRect, card: card))
 
                 lineBreak += 1
 
@@ -51,13 +51,13 @@ class MainViewController: UIViewController {
         }
     }
 
-    private func cardViewWithFrame(frame: CGRect, card: Card) -> CardView {
+    private func cardView(frame: CGRect, card: Card) -> CardView {
         let newCardView = CardView(frame: frame)
         newCardView.cardColor = UIColor.cardColor
         newCardView.cardHighlightColor = UIColor.cardHighlightColor
         newCardView.heartAndDiamondColor = UIColor.darkRedColor
         newCardView.clubAndSpadeColor = UIColor.slateColor
-        newCardView.configure(card.rank, suit: card.suit)
+        newCardView.configure(rank: card.rank, suit: card.suit)
         return newCardView
     }
 }

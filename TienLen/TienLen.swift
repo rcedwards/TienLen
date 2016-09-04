@@ -16,36 +16,36 @@ public struct TienLen: Game {
 
     public var deck: Deck
     public var activeHand: Hand?
-    public private(set) var playerHands = [Hand]()
+    public fileprivate(set) var playerHands = [Hand]()
 
-    private let numberOfPlayers: Int
+    fileprivate let numberOfPlayers: Int
 
     // MARK: - Static Properties
 
     public static var suitOrder: Array<Suit> {
         return [
-            .Spade,
-            .Club,
-            .Diamond,
-            .Heart
+            .spade,
+            .club,
+            .diamond,
+            .heart
         ]
     }
 
     public static var rankOrder: Array<Rank> {
         return [
-            .Three,
-            .Four,
-            .Five,
-            .Six,
-            .Seven,
-            .Eight,
-            .Nine,
-            .Ten,
-            .Jack,
-            .Queen,
-            .King,
-            .Ace,
-            .Two
+            .three,
+            .four,
+            .five,
+            .six,
+            .seven,
+            .eight,
+            .nine,
+            .ten,
+            .jack,
+            .queen,
+            .king,
+            .ace,
+            .two
         ]
     }
 
@@ -55,19 +55,19 @@ public struct TienLen: Game {
 
     public init(numberOfPlayers: Int, deck: Deck = Deck()) throws {
         guard TienLen.acceptablePlayerRange.contains(numberOfPlayers) else {
-            throw Error.InvalidNumberOfPlayers(numberOfPlayers)
+            throw Error.invalidNumberOfPlayers(numberOfPlayers)
         }
         self.numberOfPlayers = numberOfPlayers
         self.deck = deck
         dealHands()
     }
 
-    public enum Error: ErrorType {
-        case InvalidNumberOfPlayers(Int)
+    public enum Error: Swift.Error {
+        case invalidNumberOfPlayers(Int)
     }
 
     public struct Hand {
-        private static let CardsPerHand = 13
+        fileprivate static let CardsPerHand = 13
 
         public let cards: Set<Card>
 
@@ -84,13 +84,13 @@ public struct TienLen: Game {
 // MARK: - Dealing
 
 extension TienLen {
-    private mutating func dealHands() {
+    fileprivate mutating func dealHands() {
         for _ in 0..<numberOfPlayers {
             playerHands.append(newPlayerHand())
         }
     }
 
-    private mutating func newPlayerHand() -> Hand {
+    fileprivate mutating func newPlayerHand() -> Hand {
         var cards = Set<Card>()
         for _ in 0..<TienLen.Hand.CardsPerHand {
             guard let nextCard = deck.next() else {

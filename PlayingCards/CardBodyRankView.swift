@@ -13,11 +13,11 @@ private let DetailSuitViewGridRowCount = 7
 
 class CardBodyRankView: UIView {
 
-    private var rank: Rank = .Ace {
+    private var rank: Rank = .ace {
         didSet {
         }
     }
-    private var suit: Suit = .Spade {
+    private var suit: Suit = .spade {
         didSet {
         }
     }
@@ -51,13 +51,13 @@ class CardBodyRankView: UIView {
     }
 
     private func setup() {
-        backgroundColor = UIColor.redColor()
+        backgroundColor = UIColor.red
         addSubviews()
         layoutDetailSuitViews()
     }
 
     private func addSubviews() {
-        detailSuitViewGrid.flatten().map() {
+        detailSuitViewGrid.joined().map() {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -65,19 +65,19 @@ class CardBodyRankView: UIView {
 
     private func layoutDetailSuitViews() {
         // Detail View Height and Width
-        detailSuitViewGrid.flatten().map() {
+        detailSuitViewGrid.joined().map() {
             let widthConstraint = NSLayoutConstraint(item: $0,
-                attribute: .Width,
-                relatedBy: .Equal,
+                attribute: .width,
+                relatedBy: .equal,
                 toItem: self,
-                attribute: .Width,
+                attribute: .width,
                 multiplier: (1 / CGFloat(DetailSuitViewGridColumnCount)),
                 constant: 0)
             let heightConstraint = NSLayoutConstraint(item: $0,
-                attribute: .Height,
-                relatedBy: .Equal,
+                attribute: .height,
+                relatedBy: .equal,
                 toItem: self,
-                attribute: .Height,
+                attribute: .height,
                 multiplier: (1 / CGFloat(DetailSuitViewGridRowCount)),
                 constant: 0)
             addConstraints([widthConstraint, heightConstraint])
@@ -87,24 +87,24 @@ class CardBodyRankView: UIView {
         let columnOneHead = detailSuitViewGrid[0][0]
         let columnTwoHead = detailSuitViewGrid[1][0]
         let columnThreeHead = detailSuitViewGrid[2][0]
-        columnOneHead.leadingAnchor.constraintEqualToAnchor(leadingAnchor).active = true
-        columnTwoHead.leadingAnchor.constraintEqualToAnchor(columnOneHead.trailingAnchor).active = true
-        columnThreeHead.leadingAnchor.constraintEqualToAnchor(columnTwoHead.trailingAnchor).active = true
+        columnOneHead.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        columnTwoHead.leadingAnchor.constraint(equalTo: columnOneHead.trailingAnchor).isActive = true
+        columnThreeHead.leadingAnchor.constraint(equalTo: columnTwoHead.trailingAnchor).isActive = true
 
         // Vertical Layout
         for column in detailSuitViewGrid {
-            for (index, suitView) in column.enumerate() {
+            for (index, suitView) in column.enumerated() {
                 if index == column.indices.first {
-                    suitView.topAnchor.constraintEqualToAnchor(layoutMarginsGuide.topAnchor).active = true
+                    suitView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
                     continue
                 }
                 let previousDetailView = column[index - 1]
-                suitView.leadingAnchor.constraintEqualToAnchor(previousDetailView.leadingAnchor).active = true
+                suitView.leadingAnchor.constraint(equalTo: previousDetailView.leadingAnchor).isActive = true
                 let verticalConstraint = NSLayoutConstraint(item: suitView,
-                                                            attribute: .Top,
-                                                            relatedBy: .Equal,
+                                                            attribute: .top,
+                                                            relatedBy: .equal,
                                                             toItem: previousDetailView,
-                                                            attribute: .Bottom,
+                                                            attribute: .bottom,
                                                             multiplier: 1.0,
                                                             constant: 0)
                 addConstraint(verticalConstraint)
@@ -124,7 +124,7 @@ private class SuitDetailView: UIView {
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         backgroundColor = UIColor.randomColor()
     }
 }

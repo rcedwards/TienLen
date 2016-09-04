@@ -21,10 +21,10 @@ extension TienLen.Hand {
     public var combos: Set<Combo> { return cards.combos }
 }
 
-extension SequenceType where Generator.Element == TienLen.Card {
+extension Sequence where Iterator.Element == TienLen.Card {
 
     public var longestRun: Run? {
-        return runs.sort { $0.0.count > $0.1.count }.first
+        return runs.sorted { $0.0.count > $0.1.count }.first
     }
 
     public var runs: [Run] {
@@ -32,14 +32,14 @@ extension SequenceType where Generator.Element == TienLen.Card {
 
         var currentRun: Run?
 
-        let sortedCards = Array(self).sort() { $0 < $1 }
+        let sortedCards = Array(self).sorted() { $0 < $1 }
         var remainingCards = Set(self)
 
         for card in sortedCards where remainingCards.contains(card) {
 
             var currentRank = card.rank
 
-            while let nextRank = nextRank(currentRank) {
+            while let nextRank = next(rank: currentRank) {
 
                 let successors = remainingCards.filter() { $0.rank == nextRank }
                 if let nextCard = successors.first {
@@ -56,7 +56,7 @@ extension SequenceType where Generator.Element == TienLen.Card {
 
             }
             
-            if let currentRun = currentRun where currentRun.count >= MinimumRunCount {
+            if let currentRun = currentRun, currentRun.count >= MinimumRunCount {
                 runs.append(currentRun)
                 for card in currentRun {
                     remainingCards.remove(card)
@@ -80,12 +80,12 @@ extension SequenceType where Generator.Element == TienLen.Card {
         return combos
     }
 
-    private func nextRank(rank: Rank) -> Rank? {
+    private func next(rank: Rank) -> Rank? {
         let ranks = TienLen.rankOrder
-        guard let rankIndex = ranks.indexOf(rank) else {
+        guard let rankIndex = ranks.index(of: rank) else {
             fatalError("Rank index must be found")
         }
-        let successorIndex = rankIndex.successor()
+        let successorIndex = (rankIndex + 1)
 
         guard ranks.indices.contains(successorIndex) && successorIndex > 0 else {
             return nil
