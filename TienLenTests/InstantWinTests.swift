@@ -26,24 +26,24 @@ class InstantWinTests: XCTestCase {
     */
 
     func testFourTwosInstantWin() {
-        let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
-        let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
-        let twoOfClubs = TienLen.Card(rank: .Two, suit: .Club)
-        let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
+        let twoOfHearts = TienLen.Card(rank: .two, suit: .heart)
+        let twoOfSpades = TienLen.Card(rank: .two, suit: .spade)
+        let twoOfClubs = TienLen.Card(rank: .two, suit: .club)
+        let twoOfDiamonds = TienLen.Card(rank: .two, suit: .diamond)
 
         guard let fourTwos = TienLen.Hand(cards: [twoOfHearts,
             twoOfSpades,
             twoOfClubs,
             twoOfDiamonds,
-            TienLen.Card(rank: .Ace, suit: .Spade),
-            TienLen.Card(rank: .Five, suit: .Spade),
-            TienLen.Card(rank: .Nine, suit: .Spade),
-            TienLen.Card(rank: .Jack, suit: .Spade),
-            TienLen.Card(rank: .Three, suit: .Spade),
-            TienLen.Card(rank: .Three, suit: .Heart),
-            TienLen.Card(rank: .Three, suit: .Diamond),
-            TienLen.Card(rank: .Six, suit: .Spade),
-            TienLen.Card(rank: .Jack, suit: .Diamond)
+            TienLen.Card(rank: .ace, suit: .spade),
+            TienLen.Card(rank: .five, suit: .spade),
+            TienLen.Card(rank: .nine, suit: .spade),
+            TienLen.Card(rank: .jack, suit: .spade),
+            TienLen.Card(rank: .three, suit: .spade),
+            TienLen.Card(rank: .three, suit: .heart),
+            TienLen.Card(rank: .three, suit: .diamond),
+            TienLen.Card(rank: .six, suit: .spade),
+            TienLen.Card(rank: .jack, suit: .diamond)
             ]) else {
                 XCTFail("Failed to create hand")
                 return
@@ -54,19 +54,19 @@ class InstantWinTests: XCTestCase {
 
     func testSixPairsInstantWin() {
         guard let sixPairs = TienLen.Hand(cards: [
-            TienLen.Card(rank: .Four, suit: .Heart),
-            TienLen.Card(rank: .Four, suit: .Spade),
-            TienLen.Card(rank: .Three, suit: .Heart),
-            TienLen.Card(rank: .Three, suit: .Diamond),
-            TienLen.Card(rank: .Ten, suit: .Club),
-            TienLen.Card(rank: .Ten, suit: .Spade),
-            TienLen.Card(rank: .King, suit: .Diamond),
-            TienLen.Card(rank: .King, suit: .Club),
-            TienLen.Card(rank: .Ace, suit: .Spade),
-            TienLen.Card(rank: .Ace, suit: .Heart),
-            TienLen.Card(rank: .Two, suit: .Heart),
-            TienLen.Card(rank: .Two, suit: .Diamond),
-            TienLen.Card(rank: .Two, suit: .Spade)
+            TienLen.Card(rank: .four, suit: .heart),
+            TienLen.Card(rank: .four, suit: .spade),
+            TienLen.Card(rank: .three, suit: .heart),
+            TienLen.Card(rank: .three, suit: .diamond),
+            TienLen.Card(rank: .ten, suit: .club),
+            TienLen.Card(rank: .ten, suit: .spade),
+            TienLen.Card(rank: .king, suit: .diamond),
+            TienLen.Card(rank: .king, suit: .club),
+            TienLen.Card(rank: .ace, suit: .spade),
+            TienLen.Card(rank: .ace, suit: .heart),
+            TienLen.Card(rank: .two, suit: .heart),
+            TienLen.Card(rank: .two, suit: .diamond),
+            TienLen.Card(rank: .two, suit: .spade)
             ]) else {
                 XCTFail("Failed to create hand")
                 return
@@ -76,19 +76,19 @@ class InstantWinTests: XCTestCase {
 
     func testThreeTriplesInstantWin() {
         guard let threeTriples = TienLen.Hand(cards: [
-            TienLen.Card(rank: .Four, suit: .Heart),
-            TienLen.Card(rank: .Four, suit: .Spade),
-            TienLen.Card(rank: .Four, suit: .Club),
-            TienLen.Card(rank: .Ten, suit: .Diamond),
-            TienLen.Card(rank: .Ten, suit: .Club),
-            TienLen.Card(rank: .Ten, suit: .Spade),
-            TienLen.Card(rank: .King, suit: .Diamond),
-            TienLen.Card(rank: .King, suit: .Club),
-            TienLen.Card(rank: .King, suit: .Spade),
-            TienLen.Card(rank: .Ace, suit: .Heart),
-            TienLen.Card(rank: .Three, suit: .Heart),
-            TienLen.Card(rank: .Five, suit: .Diamond),
-            TienLen.Card(rank: .Six, suit: .Spade)
+            TienLen.Card(rank: .four, suit: .heart),
+            TienLen.Card(rank: .four, suit: .spade),
+            TienLen.Card(rank: .four, suit: .club),
+            TienLen.Card(rank: .ten, suit: .diamond),
+            TienLen.Card(rank: .ten, suit: .club),
+            TienLen.Card(rank: .ten, suit: .spade),
+            TienLen.Card(rank: .king, suit: .diamond),
+            TienLen.Card(rank: .king, suit: .club),
+            TienLen.Card(rank: .king, suit: .spade),
+            TienLen.Card(rank: .ace, suit: .heart),
+            TienLen.Card(rank: .three, suit: .heart),
+            TienLen.Card(rank: .five, suit: .diamond),
+            TienLen.Card(rank: .six, suit: .spade)
             ]) else {
                 XCTFail("Failed to create hand")
                 return
@@ -98,19 +98,19 @@ class InstantWinTests: XCTestCase {
 
     func testUltimateDragonsHead() {
         guard let ultimateDragon = TienLen.Hand(cards: [
-            TienLen.Card(rank: .Three, suit: .Spade),
-            TienLen.Card(rank: .Four, suit: .Spade),
-            TienLen.Card(rank: .Five, suit: .Club),
-            TienLen.Card(rank: .Six, suit: .Diamond),
-            TienLen.Card(rank: .Seven, suit: .Club),
-            TienLen.Card(rank: .Eight, suit: .Spade),
-            TienLen.Card(rank: .Nine, suit: .Diamond),
-            TienLen.Card(rank: .Ten, suit: .Club),
-            TienLen.Card(rank: .Jack, suit: .Spade),
-            TienLen.Card(rank: .Queen, suit: .Heart),
-            TienLen.Card(rank: .King, suit: .Heart),
-            TienLen.Card(rank: .Ace, suit: .Heart),
-            TienLen.Card(rank: .Two, suit: .Spade)
+            TienLen.Card(rank: .three, suit: .spade),
+            TienLen.Card(rank: .four, suit: .spade),
+            TienLen.Card(rank: .five, suit: .club),
+            TienLen.Card(rank: .six, suit: .diamond),
+            TienLen.Card(rank: .seven, suit: .club),
+            TienLen.Card(rank: .eight, suit: .spade),
+            TienLen.Card(rank: .nine, suit: .diamond),
+            TienLen.Card(rank: .ten, suit: .club),
+            TienLen.Card(rank: .jack, suit: .spade),
+            TienLen.Card(rank: .queen, suit: .heart),
+            TienLen.Card(rank: .king, suit: .heart),
+            TienLen.Card(rank: .ace, suit: .heart),
+            TienLen.Card(rank: .two, suit: .spade)
             ]) else {
                 XCTFail("Failed to create hand")
                 return

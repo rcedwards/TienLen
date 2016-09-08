@@ -13,19 +13,19 @@ import XCTest
 class HandsTests: XCTestCase {
     func testRuns() {
         guard let hand = TienLen.Hand(cards: [
-            TienLen.Card(rank: .Three, suit: .Heart),
-            TienLen.Card(rank: .Four, suit: .Heart),
-            TienLen.Card(rank: .Five, suit: .Heart),
-            TienLen.Card(rank: .Ten, suit: .Diamond),
-            TienLen.Card(rank: .Jack, suit: .Heart),
-            TienLen.Card(rank: .Queen, suit: .Diamond),
-            TienLen.Card(rank: .King, suit: .Club),
-            TienLen.Card(rank: .Ace, suit: .Spade),
-            TienLen.Card(rank: .Ten, suit: .Heart),
-            TienLen.Card(rank: .Three, suit: .Club),
-            TienLen.Card(rank: .Three, suit: .Diamond),
-            TienLen.Card(rank: .Four, suit: .Club),
-            TienLen.Card(rank: .Jack, suit: .Diamond)
+            TienLen.Card(rank: .three, suit: .heart),
+            TienLen.Card(rank: .four, suit: .heart),
+            TienLen.Card(rank: .five, suit: .heart),
+            TienLen.Card(rank: .ten, suit: .diamond),
+            TienLen.Card(rank: .jack, suit: .heart),
+            TienLen.Card(rank: .queen, suit: .diamond),
+            TienLen.Card(rank: .king, suit: .club),
+            TienLen.Card(rank: .ace, suit: .spade),
+            TienLen.Card(rank: .ten, suit: .heart),
+            TienLen.Card(rank: .three, suit: .club),
+            TienLen.Card(rank: .three, suit: .diamond),
+            TienLen.Card(rank: .four, suit: .club),
+            TienLen.Card(rank: .jack, suit: .diamond)
             ]) else {
                 XCTFail("Failed to create hand")
                 return
@@ -40,26 +40,26 @@ class HandsTests: XCTestCase {
     }
 
     func testMinimumCardCount() {
-        let hand = TienLen.Hand(cards: [TienLen.Card(rank: .Ten, suit: .Heart)])
+        let hand = TienLen.Hand(cards: [TienLen.Card(rank: .ten, suit: .heart)])
         XCTAssertNil(hand, "Hand should not be created with less than 13 cards")
     }
 
     func testMaximumCardCount() {
         let hand = TienLen.Hand(cards: [
-            TienLen.Card(rank: .Three, suit: .Heart),
-            TienLen.Card(rank: .Four, suit: .Heart),
-            TienLen.Card(rank: .Five, suit: .Heart),
-            TienLen.Card(rank: .Ten, suit: .Diamond),
-            TienLen.Card(rank: .Jack, suit: .Heart),
-            TienLen.Card(rank: .Queen, suit: .Diamond),
-            TienLen.Card(rank: .King, suit: .Club),
-            TienLen.Card(rank: .Ace, suit: .Spade),
-            TienLen.Card(rank: .Ten, suit: .Heart),
-            TienLen.Card(rank: .Three, suit: .Club),
-            TienLen.Card(rank: .Three, suit: .Diamond),
-            TienLen.Card(rank: .Four, suit: .Club),
-            TienLen.Card(rank: .Jack, suit: .Diamond),
-            TienLen.Card(rank: .Jack, suit: .Club)
+            TienLen.Card(rank: .three, suit: .heart),
+            TienLen.Card(rank: .four, suit: .heart),
+            TienLen.Card(rank: .five, suit: .heart),
+            TienLen.Card(rank: .ten, suit: .diamond),
+            TienLen.Card(rank: .jack, suit: .heart),
+            TienLen.Card(rank: .queen, suit: .diamond),
+            TienLen.Card(rank: .king, suit: .club),
+            TienLen.Card(rank: .ace, suit: .spade),
+            TienLen.Card(rank: .ten, suit: .heart),
+            TienLen.Card(rank: .three, suit: .club),
+            TienLen.Card(rank: .three, suit: .diamond),
+            TienLen.Card(rank: .four, suit: .club),
+            TienLen.Card(rank: .jack, suit: .diamond),
+            TienLen.Card(rank: .jack, suit: .club)
             ])
         XCTAssertNil(hand, "Hand should not be created with any more than 13 cards.")
     }

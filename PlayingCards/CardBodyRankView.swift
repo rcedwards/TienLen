@@ -57,7 +57,7 @@ class CardBodyRankView: UIView {
     }
 
     private func addSubviews() {
-        detailSuitViewGrid.joined().map() {
+        detailSuitViewGrid.joined().apply() {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -65,7 +65,7 @@ class CardBodyRankView: UIView {
 
     private func layoutDetailSuitViews() {
         // Detail View Height and Width
-        detailSuitViewGrid.joined().map() {
+        detailSuitViewGrid.joined().apply() {
             let widthConstraint = NSLayoutConstraint(item: $0,
                 attribute: .width,
                 relatedBy: .equal,

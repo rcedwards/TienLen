@@ -50,12 +50,12 @@ class TienLenTests: XCTestCase {
 
     func testSuitOrder() {
         XCTAssertTrue(TienLen.validateCardOrder())
-        let twoOfHearts = TienLen.Card(rank: .Two, suit: .Heart)
-        let twoOfSpades = TienLen.Card(rank: .Two, suit: .Spade)
-        let twoOfClub = TienLen.Card(rank: .Two, suit: .Club)
-        let twoOfDiamonds = TienLen.Card(rank: .Two, suit: .Diamond)
+        let twoOfHearts = TienLen.Card(rank: .two, suit: .heart)
+        let twoOfSpades = TienLen.Card(rank: .two, suit: .spade)
+        let twoOfClub = TienLen.Card(rank: .two, suit: .club)
+        let twoOfDiamonds = TienLen.Card(rank: .two, suit: .diamond)
 
-        let aceOfDiamonds = TienLen.Card(rank: .Ace, suit: .Diamond)
+        let aceOfDiamonds = TienLen.Card(rank: .ace, suit: .diamond)
 
         XCTAssertGreaterThan(twoOfDiamonds, twoOfClub)
         XCTAssertGreaterThan(twoOfHearts, twoOfDiamonds)

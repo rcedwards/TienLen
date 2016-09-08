@@ -23,7 +23,7 @@ open class CardView: UIView {
         didSet {
             switch suit {
             case .heart, .diamond:
-                allLabels.map() { $0.textColor = heartAndDiamondColor }
+                allLabels.apply() { $0.textColor = heartAndDiamondColor }
             default:
                 break
             }
@@ -33,7 +33,7 @@ open class CardView: UIView {
         didSet {
             switch suit {
             case .club, .spade:
-                allLabels.map() { $0.textColor = clubAndSpadeColor }
+                allLabels.apply() { $0.textColor = clubAndSpadeColor }
             default:
                 break
             }
@@ -55,13 +55,13 @@ open class CardView: UIView {
     }
     fileprivate var suit: Suit = .spade {
         didSet {
-            allLabels.map() { $0.textColor = labelColor }
+            allLabels.apply() { $0.textColor = labelColor }
             suitDisplayValue = suit.description
         }
     }
     fileprivate var rankDisplayValue: String = "" {
         didSet {
-            rankLabels.map() {
+            rankLabels.apply() {
                 $0.text = rankDisplayValue
                 $0.sizeToFit()
             }
@@ -69,7 +69,7 @@ open class CardView: UIView {
     }
     fileprivate var suitDisplayValue: String = "" {
         didSet {
-            suitLabels.map() {
+            suitLabels.apply() {
                 $0.text = suitDisplayValue
                 $0.sizeToFit()
             }
@@ -80,9 +80,9 @@ open class CardView: UIView {
         didSet {
             switch frame.width {
             case (0...100):
-                allLabels.map() { $0.font = UIFont.cardFont(size: 10.0) }
+                allLabels.apply() { $0.font = UIFont.cardFont(size: 10.0) }
             default:
-                allLabels.map() { $0.font = UIFont.cardFont(size: 15.0) }
+                allLabels.apply() { $0.font = UIFont.cardFont(size: 15.0) }
             }
         }
     }
@@ -121,7 +121,7 @@ open class CardView: UIView {
     }
 
     private func addSubviews() {
-        allLabels.map() {
+        allLabels.apply() {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.textColor = labelColor
             addSubview($0)
@@ -201,7 +201,7 @@ extension CardView {
         topLeftSuitLabel.topAnchor.constraint(equalTo: topLeftRankLabel.bottomAnchor).isActive = true
 
         let bottomLabels = [bottomRightRankLabel, bottomRightSuitLabel]
-        bottomLabels.map() {
+        bottomLabels.apply() {
             let transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
             $0.transform = transform
         }

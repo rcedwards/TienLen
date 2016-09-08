@@ -17,7 +17,7 @@ class RankTests: XCTestCase {
     }
 
     func testDescription() {
-        let ace = Rank.Ace
+        let ace = Rank.ace
         let expectedDescription = "A"
         XCTAssertEqual(expectedDescription, ace.description)
         XCTAssertEqual(expectedDescription, ace.debugDescription)

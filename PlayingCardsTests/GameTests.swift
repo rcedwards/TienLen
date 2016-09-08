@@ -28,25 +28,25 @@ struct ValidGameStub: Game {
     }
 
     static var rankOrder: Array<Rank> = [
-        .Ace,
-        .Two,
-        .Jack,
-        .Queen,
-        .Four,
-        .Nine,
-        .King,
-        .Ten,
-        .Eight,
-        .Three,
-        .Five,
-        .Six,
-        .Seven
+        .ace,
+        .two,
+        .jack,
+        .queen,
+        .four,
+        .nine,
+        .king,
+        .ten,
+        .eight,
+        .three,
+        .five,
+        .six,
+        .seven
     ]
     static var suitOrder: Array<Suit> = [
-        .Heart,
-        .Spade,
-        .Diamond,
-        .Club
+        .heart,
+        .spade,
+        .diamond,
+        .club
     ]
 }
 
@@ -58,25 +58,25 @@ struct DuplicateRanksGameStub: Game {
     }
 
     static var rankOrder: Array<Rank> = [
-        .Ace,
-        .Two,
-        .Jack,
-        .Queen,
-        .Four,
-        .Nine,
-        .King,
-        .Five,
-        .Eight,
-        .Three,
-        .Five,
-        .Six,
-        .Seven
+        .ace,
+        .two,
+        .jack,
+        .queen,
+        .four,
+        .nine,
+        .king,
+        .five,
+        .eight,
+        .three,
+        .five,
+        .six,
+        .seven
     ]
     static var suitOrder: Array<Suit> = [
-        .Heart,
-        .Spade,
-        .Diamond,
-        .Club
+        .heart,
+        .spade,
+        .diamond,
+        .club
     ]
 }
 
@@ -88,10 +88,10 @@ struct IncompleteGameStub: Game {
     }
 
     static var rankOrder: Array<Rank> = [
-        .Ace,
-        .Two
+        .ace,
+        .two
     ]
     static var suitOrder: Array<Suit> = [
-        .Heart
+        .heart
     ]
 }
