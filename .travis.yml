@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: TienLen.xcodeproj
-xcode_scheme: [PlayingCards, TienLen, Onward] 
-xcode_sdk: iphonesimulator
 osx_image: xcode8
+cache: bundler
+script:
+  - bundle exec fastlane test
