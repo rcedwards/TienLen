@@ -1,0 +1,33 @@
+fastlane_version "1.87.0"
+
+default_platform :ios
+
+APP_SCHEME_NAME = "Onward"
+TIENLEN_SCHEME_NAME = "TienLen"
+CARDS_SCHEME_NAME = "PlayingCards"
+ALL_SCHEMES = [
+  APP_SCHEME_NAME,
+  TIENLEN_SCHEME_NAME,
+  CARDS_SCHEME_NAME
+]        
+
+PROJECT_PATH = "TienLen.xcodeproj"
+
+platform :ios do
+  before_all do
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    ALL_SCHEMES.map { |scheme|
+      xctest(scheme: scheme,
+        destination: "platform=iOS Simulator,name=iPhone 6,OS=10.0")
+    }
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end

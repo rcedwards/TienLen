@@ -8,92 +8,92 @@
 
 import UIKit
 
-public class CardView: UIView {
+open class CardView: UIView {
 
     // MARK: - Colors
 
-    public var cardColor: UIColor = UIColor.whiteColor() {
+    open var cardColor: UIColor = UIColor.white {
         didSet { setNeedsDisplay() }
     }
-    public var cardHighlightColor: UIColor = UIColor.redColor() {
+    open var cardHighlightColor: UIColor = UIColor.red {
         didSet { setNeedsDisplay() }
     }
 
-    public var heartAndDiamondColor: UIColor = UIColor.redColor() {
+    open var heartAndDiamondColor: UIColor = UIColor.red {
         didSet {
             switch suit {
-            case .Heart, .Diamond:
-                allLabels.map() { $0.textColor = heartAndDiamondColor }
+            case .heart, .diamond:
+                allLabels.apply() { $0.textColor = heartAndDiamondColor }
             default:
                 break
             }
         }
     }
-    public var clubAndSpadeColor: UIColor = UIColor.blackColor() {
+    open var clubAndSpadeColor: UIColor = UIColor.black {
         didSet {
             switch suit {
-            case .Club, .Spade:
-                allLabels.map() { $0.textColor = clubAndSpadeColor }
+            case .club, .spade:
+                allLabels.apply() { $0.textColor = clubAndSpadeColor }
             default:
                 break
             }
         }
     }
-    private var labelColor: UIColor {
+    fileprivate var labelColor: UIColor {
         switch suit {
-        case .Club, .Spade:
+        case .club, .spade:
             return clubAndSpadeColor
-        case .Diamond, .Heart:
+        case .diamond, .heart:
             return heartAndDiamondColor
         }
     }
 
     // MARK: - Suit and Rank
 
-    private var rank: Rank = .Ace {
+    fileprivate var rank: Rank = .ace {
         didSet { rankDisplayValue = rank.description }
     }
-    private var suit: Suit = .Spade {
+    fileprivate var suit: Suit = .spade {
         didSet {
-            allLabels.map() { $0.textColor = labelColor }
+            allLabels.apply() { $0.textColor = labelColor }
             suitDisplayValue = suit.description
         }
     }
-    private var rankDisplayValue: String = "" {
+    fileprivate var rankDisplayValue: String = "" {
         didSet {
-            rankLabels.map() {
+            rankLabels.apply() {
                 $0.text = rankDisplayValue
                 $0.sizeToFit()
             }
         }
     }
-    private var suitDisplayValue: String = "" {
+    fileprivate var suitDisplayValue: String = "" {
         didSet {
-            suitLabels.map() {
+            suitLabels.apply() {
                 $0.text = suitDisplayValue
                 $0.sizeToFit()
             }
         }
     }
 
-    override public var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             switch frame.width {
             case (0...100):
-                allLabels.map() { $0.font = UIFont.cardFont(10.0) }
+                allLabels.apply() { $0.font = UIFont.cardFont(size: 10.0) }
             default:
-                allLabels.map() { $0.font = UIFont.cardFont(15.0) }
+                allLabels.apply() { $0.font = UIFont.cardFont(size: 15.0) }
             }
         }
     }
 
     // MARK: - Subviews
 
-    private let topLeftRankLabel = UILabel()
-    private let topLeftSuitLabel = UILabel()
-    private let bottomRightRankLabel = UILabel()
-    private let bottomRightSuitLabel = UILabel()
-    private let bodyRankView = CardBodyRankView()
+    fileprivate let topLeftRankLabel = UILabel()
+    fileprivate let topLeftSuitLabel = UILabel()
+    fileprivate let bottomRightRankLabel = UILabel()
+    fileprivate let bottomRightSuitLabel = UILabel()
+    fileprivate let bodyRankView = CardBodyRankView()
 
     // MARK: - Lifecycle
 
@@ -107,13 +107,13 @@ public class CardView: UIView {
         setup()
     }
 
-    public func configure(rank: Rank, suit: Suit) {
+    open func configure(rank: Rank, suit: Suit) {
         self.rank = rank
         self.suit = suit
     }
 
     private func setup() {
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
 
         addSubviews()
         configureSuitAndRankViews()
@@ -121,7 +121,7 @@ public class CardView: UIView {
     }
 
     private func addSubviews() {
-        allLabels.map() {
+        allLabels.apply() {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.textColor = labelColor
             addSubview($0)
@@ -134,39 +134,39 @@ public class CardView: UIView {
 // MARK: - Drawing
 
 extension CardView {
-    override public func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override open func draw(_ rect: CGRect) {
+        super.draw(rect)
 
         drawCardBackground(rect)
         switch rank {
-        case .King, .Queen, .Jack:
+        case .king, .queen, .jack:
             drawInnerHollowRectangle(rect)
         default:
             break
         }
     }
 
-    private func drawCardBackground(rect: CGRect) {
+    private func drawCardBackground(_ rect: CGRect) {
         cardColor.setFill()
         let card = UIBezierPath(roundedRect: rect,
                                 cornerRadius: rect.width * CardView.cornerRadiusProportion)
         card.fill()
     }
 
-    private func drawInnerHollowRectangle(rect: CGRect) {
+    private func drawInnerHollowRectangle(_ rect: CGRect) {
         cardHighlightColor.setStroke()
 
         let subHeight = rect.height * CardView.innerRectProportion
         let dy = (rect.height - subHeight) / 2
         let dx = dy * CardView.rectHeightToWidthRatio
-        let subRect = CGRectInset(rect, dx, dy)
+        let subRect = rect.insetBy(dx: dx, dy: dy)
         let hollowRect = UIBezierPath(roundedRect: subRect,
                                       cornerRadius: subRect.width * CardView.cornerRadiusProportion)
         hollowRect.lineWidth = subRect.width * CardView.cornerRadiusProportion
         hollowRect.stroke()
     }
 
-    public static override func requiresConstraintBasedLayout() -> Bool {
+    open override static var requiresConstraintBasedLayout: Bool {
         return true
     }
 }
@@ -174,65 +174,66 @@ extension CardView {
 // MARK: - Constants
 
 extension CardView {
-    private static let cornerRadiusProportion: CGFloat = 0.0625
-    private static let innerRectProportion: CGFloat = 0.55
-    private static let rectHeightToWidthRatio: CGFloat = 0.719101124
-    private static let labelPadding: CGFloat = 2
-    private static let intrinsicHeight: CGFloat = 50
+    fileprivate static let cornerRadiusProportion: CGFloat = 0.0625
+    fileprivate static let innerRectProportion: CGFloat = 0.55
+    fileprivate static let rectHeightToWidthRatio: CGFloat = 0.719101124
+    fileprivate static let labelPadding: CGFloat = 2
+    fileprivate static let intrinsicHeight: CGFloat = 50
 }
 
 // MARK: - Subview Layout
 
 extension CardView {
-    private var suitLabels: [UILabel] {
+    fileprivate var suitLabels: [UILabel] {
         return [topLeftSuitLabel, bottomRightSuitLabel]
     }
-    private var rankLabels: [UILabel] {
+    fileprivate var rankLabels: [UILabel] {
         return [topLeftRankLabel, bottomRightRankLabel]
     }
-    private var allLabels: [UILabel] {
+    fileprivate var allLabels: [UILabel] {
         return [suitLabels, rankLabels].flatMap() { $0 }
     }
 
-    private func configureSuitAndRankViews() {
-        topLeftRankLabel.leadingAnchor.constraintEqualToAnchor(layoutMarginsGuide.leadingAnchor).active = true
-        topLeftSuitLabel.centerXAnchor.constraintEqualToAnchor(topLeftRankLabel.centerXAnchor).active = true
-        topLeftRankLabel.topAnchor.constraintEqualToAnchor(layoutMarginsGuide.topAnchor).active = true
-        topLeftSuitLabel.topAnchor.constraintEqualToAnchor(topLeftRankLabel.bottomAnchor).active = true
+    fileprivate func configureSuitAndRankViews() {
+        topLeftRankLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
+        topLeftSuitLabel.centerXAnchor.constraint(equalTo: topLeftRankLabel.centerXAnchor).isActive = true
+        topLeftRankLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
+        topLeftSuitLabel.topAnchor.constraint(equalTo: topLeftRankLabel.bottomAnchor).isActive = true
 
         let bottomLabels = [bottomRightRankLabel, bottomRightSuitLabel]
-        bottomLabels.map() {
-            let transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        bottomLabels.apply() {
+            let transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
             $0.transform = transform
         }
-        bottomRightRankLabel.trailingAnchor.constraintEqualToAnchor(layoutMarginsGuide.trailingAnchor).active = true
-        bottomRightSuitLabel.centerXAnchor.constraintEqualToAnchor(bottomRightRankLabel.centerXAnchor).active = true
-        bottomRightSuitLabel.bottomAnchor.constraintEqualToAnchor(bottomRightRankLabel.topAnchor).active = true
-        bottomRightRankLabel.bottomAnchor.constraintEqualToAnchor(layoutMarginsGuide.bottomAnchor).active = true
+        bottomRightRankLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
+        bottomRightSuitLabel.centerXAnchor.constraint(equalTo: bottomRightRankLabel.centerXAnchor).isActive = true
+        bottomRightSuitLabel.bottomAnchor.constraint(equalTo: bottomRightRankLabel.topAnchor).isActive = true
+        bottomRightRankLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
     }
 
-    private func configureBodyView() {
-        bodyRankView.centerXAnchor.constraintEqualToAnchor(centerXAnchor).active = true
-        bodyRankView.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+    fileprivate func configureBodyView() {
+        bodyRankView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        bodyRankView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         let widthConstraint = NSLayoutConstraint(item: bodyRankView,
-                                                 attribute: .Width,
-                                                 relatedBy: .Equal,
+                                                 attribute: .width,
+                                                 relatedBy: .equal,
                                                  toItem: self,
-                                                 attribute: .Width,
+                                                 attribute: .width,
                                                  multiplier: CardView.innerRectProportion,
                                                  constant: 1)
         let heightConstraint = NSLayoutConstraint(item: bodyRankView,
-                                                  attribute: .Height,
-                                                  relatedBy: .Equal,
+                                                  attribute: .height,
+                                                  relatedBy: .equal,
                                                   toItem: self,
-                                                  attribute: .Height,
+                                                  attribute: .height,
                                                   multiplier: CardView.innerRectProportion,
                                                   constant: 1)
         addConstraints([widthConstraint, heightConstraint])
     }
-    
-    public override func intrinsicContentSize() -> CGSize {
-        return CGSize(width: CardView.intrinsicHeight * CardView.rectHeightToWidthRatio, height: CardView.intrinsicHeight)
+
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(width: CardView.intrinsicHeight * CardView.rectHeightToWidthRatio,
+                      height: CardView.intrinsicHeight)
     }
 }
 

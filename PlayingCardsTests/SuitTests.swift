@@ -17,7 +17,7 @@ class SuitTests: XCTestCase {
     }
 
     func testDescription() {
-        let heart = Suit.Heart
+        let heart = Suit.heart
         let expectedDescription = "♥"
         XCTAssertEqual(expectedDescription, heart.description)
         XCTAssertEqual(expectedDescription, heart.debugDescription)

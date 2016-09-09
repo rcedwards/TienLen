@@ -12,9 +12,9 @@ import XCTest
 
 class CardTests: XCTestCase {
 
-    let aceOfSpades = Card(rank: .Ace, suit: .Spade)
-    let aceOfHearts = Card(rank: .Ace, suit: .Heart)
-    let aceOfHearts2 = Card(rank: .Ace, suit: .Heart)
+    let aceOfSpades = Card(rank: .ace, suit: .spade)
+    let aceOfHearts = Card(rank: .ace, suit: .heart)
+    let aceOfHearts2 = Card(rank: .ace, suit: .heart)
 
     func testEquality() {
         XCTAssertNotEqual(aceOfSpades, aceOfHearts)
@@ -26,7 +26,7 @@ class CardTests: XCTestCase {
 
     func testDescription() {
         let expectedDescription = "A ♥"
-        let card = Card(rank: .Ace, suit: .Heart)
+        let card = Card(rank: .ace, suit: .heart)
         XCTAssertEqual(expectedDescription, card.description)
         XCTAssertEqual(expectedDescription, card.debugDescription)
     }

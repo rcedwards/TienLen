@@ -7,34 +7,34 @@
 //
 
 public enum Rank {
-    case Ace
-    case King
-    case Queen
-    case Jack
-    case Ten
-    case Nine
-    case Eight
-    case Seven
-    case Six
-    case Five
-    case Four
-    case Three
-    case Two
+    case ace
+    case king
+    case queen
+    case jack
+    case ten
+    case nine
+    case eight
+    case seven
+    case six
+    case five
+    case four
+    case three
+    case two
 
     public static let allRanks: [Rank] = [
-        .Ace,
-        .King,
-        .Queen,
-        .Jack,
-        .Ten,
-        .Nine,
-        .Eight,
-        .Seven,
-        .Six,
-        .Five,
-        .Four,
-        .Three,
-        .Two
+        .ace,
+        .king,
+        .queen,
+        .jack,
+        .ten,
+        .nine,
+        .eight,
+        .seven,
+        .six,
+        .five,
+        .four,
+        .three,
+        .two
     ]
 }
 
@@ -47,31 +47,31 @@ extension Rank: CustomStringConvertible, CustomDebugStringConvertible {
     }
     public var _description: String {
         switch self {
-        case .Ace:
+        case .ace:
             return "A"
-        case .King:
+        case .king:
             return "K"
-        case .Queen:
+        case .queen:
             return "Q"
-        case .Jack:
+        case .jack:
             return "J"
-        case .Ten:
+        case .ten:
             return "10"
-        case .Nine:
+        case .nine:
             return "9"
-        case .Eight:
+        case .eight:
             return "8"
-        case .Seven:
+        case .seven:
             return "7"
-        case .Six:
+        case .six:
             return "6"
-        case .Five:
+        case .five:
             return "5"
-        case .Four:
+        case .four:
             return "4"
-        case .Three:
+        case .three:
             return "3"
-        case .Two:
+        case .two:
             return "2"
         }
     }

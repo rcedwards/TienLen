@@ -14,7 +14,7 @@ extension TienLen.Hand {
     public var containsInstantWin: Bool { return cards.containsInstantWin }
 }
 
-extension SequenceType where Generator.Element == TienLen.Card {
+extension Sequence where Iterator.Element == TienLen.Card {
 
     // MARK: - Instant Wins
 
@@ -28,7 +28,7 @@ extension SequenceType where Generator.Element == TienLen.Card {
     }
 
     private func containsFourTwos() -> Bool {
-        return filter() { $0.rank == .Two }.count == 4
+        return filter() { $0.rank == .two }.count == 4
     }
 
     private func containsSixPairs() -> Bool {
@@ -43,8 +43,8 @@ extension SequenceType where Generator.Element == TienLen.Card {
         guard let run = longestRun else {
             return false
         }
-        let threeOfSpades = TienLen.Card(rank: .Three, suit: .Spade)
-        let aceOfHearts = TienLen.Card(rank: .Ace, suit: .Heart)
+        let threeOfSpades = TienLen.Card(rank: .three, suit: .spade)
+        let aceOfHearts = TienLen.Card(rank: .ace, suit: .heart)
         return run.count == 13 && (run.contains(threeOfSpades) && run.contains(aceOfHearts))
     }
 
