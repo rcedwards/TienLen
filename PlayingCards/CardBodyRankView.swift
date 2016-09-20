@@ -8,19 +8,11 @@
 
 import UIKit
 
-private let DetailSuitViewGridColumnCount = 3
-private let DetailSuitViewGridRowCount = 7
+let DetailSuitViewGridColumnCount = 3
+let DetailSuitViewGridRowCount = 7
 
 class CardBodyRankView: UIView {
 
-    private var rank: Rank = .ace {
-        didSet {
-        }
-    }
-    private var suit: Suit = .spade {
-        didSet {
-        }
-    }
     private lazy var detailSuitViewGrid: [[SuitDetailView]] = {
         var suitViews = [[SuitDetailView]]()
         for _ in 0..<DetailSuitViewGridColumnCount {
@@ -46,8 +38,12 @@ class CardBodyRankView: UIView {
     }
 
     public func configure(rank: Rank, suit: Suit) {
-        self.rank = rank
-        self.suit = suit
+        let visibilityGrid = CardBodyRankView.suitVisibilityGrid(for: rank)
+        for (columnIndex, column) in detailSuitViewGrid.enumerated() {
+            for (rowIndex, detailView) in column.enumerated() {
+                detailView.isHidden = !visibilityGrid[columnIndex][rowIndex]
+            }
+        }
     }
 
     private func setup() {
@@ -67,19 +63,19 @@ class CardBodyRankView: UIView {
         // Detail View Height and Width
         detailSuitViewGrid.joined().apply() {
             let widthConstraint = NSLayoutConstraint(item: $0,
-                attribute: .width,
-                relatedBy: .equal,
-                toItem: self,
-                attribute: .width,
-                multiplier: (1 / CGFloat(DetailSuitViewGridColumnCount)),
-                constant: 0)
+                                                     attribute: .width,
+                                                     relatedBy: .equal,
+                                                     toItem: self,
+                                                     attribute: .width,
+                                                     multiplier: (1 / CGFloat(DetailSuitViewGridColumnCount)),
+                                                     constant: 0)
             let heightConstraint = NSLayoutConstraint(item: $0,
-                attribute: .height,
-                relatedBy: .equal,
-                toItem: self,
-                attribute: .height,
-                multiplier: (1 / CGFloat(DetailSuitViewGridRowCount)),
-                constant: 0)
+                                                      attribute: .height,
+                                                      relatedBy: .equal,
+                                                      toItem: self,
+                                                      attribute: .height,
+                                                      multiplier: (1 / CGFloat(DetailSuitViewGridRowCount)),
+                                                      constant: 0)
             addConstraints([widthConstraint, heightConstraint])
         }
 
@@ -113,6 +109,89 @@ class CardBodyRankView: UIView {
     }
 }
 
+extension CardBodyRankView {
+    static func suitVisibilityGrid(for rank: Rank) -> [[Bool]] {
+        switch rank {
+        case .ace:
+            return [
+                [false, false, false, false, false, false, false],
+                [false, false, false, true, false, false, false],
+                [false, false, false, false, false, false, false]
+            ]
+
+        case .ten:
+            return [
+                [true, false, true, false, true, false, true],
+                [false, true, false, false, false, true, false],
+                [true, false, true, false, true, false, true]
+            ]
+
+        case .nine:
+            return [
+                [true, false, true, false, true, false, true],
+                [false, false, false, true, false, false, false],
+                [true, false, true, false, true, false, true]
+            ]
+
+        case .eight:
+            return [
+                [true, false, false, true, false, false, true],
+                [false, false, true, false, true, false, false],
+                [true, false, false, true, false, false, true]
+            ]
+
+        case .seven:
+            return [
+                [true, false, false, false, false, false, true],
+                [false, true, false, true, false, true, false],
+                [true, false, false, false, false, false, true]
+            ]
+
+        case .six:
+            return [
+                [true, false, false, true, false, false, true],
+                [false, false, false, false, false, false, false],
+                [true, false, false, true, false, false, true]
+            ]
+
+        case .five:
+            return [
+                [true, false, false, false, false, false, true],
+                [false, false, false, true, false, false, false],
+                [true, false, false, false, false, false, true]
+            ]
+
+        case .four:
+            return [
+                [true, false, false, false, false, false, true],
+                [false, false, false, false, false, false, false],
+                [true, false, false, false, false, false, true]
+            ]
+
+        case .three:
+            return [
+                [false, false, false, false, false, false, false],
+                [true, false, false, true, false, false, true],
+                [false, false, false, false, false, false, false]
+            ]
+
+        case .two:
+            return [
+                [false, false, false, false, false, false, false],
+                [true, false, false, false, false, false, true],
+                [false, false, false, false, false, false, false]
+            ]
+
+        case .king, .queen, .jack:
+            return [
+                [false, false, false, false, false, false, false],
+                [false, false, false, false, false, false, false],
+                [false, false, false, false, false, false, false]
+            ]
+        }
+    }
+}
+
 private class SuitDetailView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -128,7 +207,6 @@ private class SuitDetailView: UIView {
         backgroundColor = UIColor.randomColor()
     }
 }
-
 
 // TODO: rcedwards REMOVE THIS. JUST FOR TESTING LAYOUT
 
