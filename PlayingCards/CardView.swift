@@ -110,6 +110,8 @@ open class CardView: UIView {
     open func configure(rank: Rank, suit: Suit) {
         self.rank = rank
         self.suit = suit
+
+        bodyRankView.configure(rank: rank, suit: suit)
     }
 
     private func setup() {

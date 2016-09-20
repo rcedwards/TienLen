@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4638A1D1CA82A43009F81C6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4638A1C1CA82A43009F81C6 /* Cards.swift */; };
+		E40B2C4C1D90CF88003E5246 /* CardBodyRankViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B2C4B1D90CF88003E5246 /* CardBodyRankViewTests.swift */; };
 		E41027C71CC286B6008A6A46 /* UIColor+Onward.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */; };
 		E41CB0DC1CBAB414006F247F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0DB1CBAB414006F247F /* CardView.swift */; };
 		E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0F21CBC1B39006F247F /* MainViewController.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		D4638A1C1CA82A43009F81C6 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		E40B2C4B1D90CF88003E5246 /* CardBodyRankViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBodyRankViewTests.swift; sourceTree = "<group>"; };
 		E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Onward.swift"; sourceTree = "<group>"; };
 		E41CB0DB1CBAB414006F247F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E41CB0F21CBC1B39006F247F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				E45ED9F11C700E8500FE3B95 /* GameTests.swift */,
 				E45ED9F21C700E8500FE3B95 /* RankTests.swift */,
 				E45ED9F31C700E8500FE3B95 /* SuitTests.swift */,
+				E40B2C4B1D90CF88003E5246 /* CardBodyRankViewTests.swift */,
 				E45ED9E31C700DE500FE3B95 /* Supporting Files */,
 			);
 			path = PlayingCardsTests;
@@ -689,6 +692,7 @@
 			files = (
 				E45ED9F51C700E8500FE3B95 /* DeckTests.swift in Sources */,
 				E45ED9F71C700E8500FE3B95 /* RankTests.swift in Sources */,
+				E40B2C4C1D90CF88003E5246 /* CardBodyRankViewTests.swift in Sources */,
 				E45ED9F81C700E8500FE3B95 /* SuitTests.swift in Sources */,
 				E45ED9F61C700E8500FE3B95 /* GameTests.swift in Sources */,
 				E45ED9F41C700E8500FE3B95 /* CardTests.swift in Sources */,
