@@ -42,6 +42,9 @@ class CardBodyRankView: UIView {
         for (columnIndex, column) in detailSuitViewGrid.enumerated() {
             for (rowIndex, detailView) in column.enumerated() {
                 detailView.isHidden = !visibilityGrid[columnIndex][rowIndex]
+                if !detailView.isHidden {
+                    detailView.configure(suit: suit)
+                }
             }
         }
     }
@@ -193,6 +196,12 @@ extension CardBodyRankView {
 }
 
 private class SuitDetailView: UIView {
+    private lazy var imageView: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -203,8 +212,42 @@ private class SuitDetailView: UIView {
         setup()
     }
 
-    fileprivate func setup() {
+    private func setup() {
         backgroundColor = UIColor.randomColor()
+
+        addSubview(imageView)
+
+        imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+
+    func configure(suit: Suit) {
+        switch suit {
+        case .club:
+            imageView.image = UIImage.club
+        case .heart:
+            imageView.image = UIImage.heart
+        case .diamond:
+            imageView.image = UIImage.diamond
+        case .spade:
+            imageView.image = UIImage.spade
+        }
+    }
+}
+
+extension UIImage {
+    fileprivate static let heart = UIImage(named: "hearts", in: Bundle.playingCardsBundle, compatibleWith: nil)
+    fileprivate static let spade = UIImage(named: "spades", in: Bundle.playingCardsBundle, compatibleWith: nil)
+    fileprivate static let diamond = UIImage(named: "diamond", in: Bundle.playingCardsBundle, compatibleWith: nil)
+    fileprivate static let club = UIImage(named: "clubs", in: Bundle.playingCardsBundle, compatibleWith: nil)
+}
+
+extension Bundle {
+    private class PlayingCardsBundleMember {}
+    public static var playingCardsBundle: Bundle {
+        return Bundle(for: PlayingCardsBundleMember.self)
     }
 }
 

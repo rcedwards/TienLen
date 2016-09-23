@@ -43,6 +43,7 @@
 		E48144C71C8BCAFD000C91E9 /* InstantWinChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48144C61C8BCAFD000C91E9 /* InstantWinChecks.swift */; };
 		E4B773DC1D8201E900B0B57D /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B773DB1D8201E900B0B57D /* SequenceExtensions.swift */; };
 		E4DFF44C1CD4FB2900FE5180 /* CardBodyRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFF44B1CD4FB2900FE5180 /* CardBodyRankView.swift */; };
+		E4F2E6A81D91806C006B25EE /* CardSuits.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F2E6A71D91806C006B25EE /* CardSuits.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		E4B773DB1D8201E900B0B57D /* SequenceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceExtensions.swift; sourceTree = "<group>"; };
 		E4DFF44B1CD4FB2900FE5180 /* CardBodyRankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBodyRankView.swift; sourceTree = "<group>"; };
 		E4EC37D91CC2C2FC00FD9C28 /* CardViewPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CardViewPlayground.playground; sourceTree = "<group>"; };
+		E4F2E6A71D91806C006B25EE /* CardSuits.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CardSuits.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 				E41CB0DA1CBAB3FA006F247F /* Views */,
 				E41CB0D91CBAB3F4006F247F /* Models */,
 				E4B773DA1D82015800B0B57D /* Extensions */,
+				E4F2E69E1D917EE2006B25EE /* Assets */,
 				E45ED9E21C700DD200FE3B95 /* Supporting Files */,
 			);
 			path = PlayingCards;
@@ -385,6 +388,14 @@
 				E4B773DB1D8201E900B0B57D /* SequenceExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E4F2E69E1D917EE2006B25EE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E4F2E6A71D91806C006B25EE /* CardSuits.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,6 +629,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F2E6A81D91806C006B25EE /* CardSuits.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
