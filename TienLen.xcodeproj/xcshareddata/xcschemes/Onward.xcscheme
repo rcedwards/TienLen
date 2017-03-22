@@ -39,6 +39,26 @@
                ReferencedContainer = "container:TienLen.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E45ED9D31C700DBE00FE3B95"
+               BuildableName = "PlayingCardsTests.xctest"
+               BlueprintName = "PlayingCardsTests"
+               ReferencedContainer = "container:TienLen.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E45ED9651C6FC9A700FE3B95"
+               BuildableName = "TienLenTests.xctest"
+               BlueprintName = "TienLenTests"
+               ReferencedContainer = "container:TienLen.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
