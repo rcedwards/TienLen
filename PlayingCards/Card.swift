@@ -6,7 +6,7 @@
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-public struct Card {
+public struct Card: Equatable {
     public let rank: Rank
     public let suit: Suit
 

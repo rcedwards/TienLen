@@ -31,7 +31,7 @@ class InstantWinTests: XCTestCase {
         let twoOfClubs = TienLen.Card(rank: .two, suit: .club)
         let twoOfDiamonds = TienLen.Card(rank: .two, suit: .diamond)
 
-        guard let fourTwos = TienLen.Hand(cards: [twoOfHearts,
+        guard let fourTwos = Hand(cards: [twoOfHearts,
             twoOfSpades,
             twoOfClubs,
             twoOfDiamonds,
@@ -53,7 +53,7 @@ class InstantWinTests: XCTestCase {
     }
 
     func testSixPairsInstantWin() {
-        guard let sixPairs = TienLen.Hand(cards: [
+        guard let sixPairs = Hand(cards: [
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .three, suit: .heart),
@@ -75,7 +75,7 @@ class InstantWinTests: XCTestCase {
     }
 
     func testThreeTriplesInstantWin() {
-        guard let threeTriples = TienLen.Hand(cards: [
+        guard let threeTriples = Hand(cards: [
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .four, suit: .club),
@@ -97,7 +97,7 @@ class InstantWinTests: XCTestCase {
     }
 
     func testUltimateDragonsHead() {
-        guard let ultimateDragon = TienLen.Hand(cards: [
+        guard let ultimateDragon = Hand(cards: [
             TienLen.Card(rank: .three, suit: .spade),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .five, suit: .club),

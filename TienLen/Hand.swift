@@ -1,5 +1,5 @@
 //
-//  Hands.swift
+//  Hand.swift
 //  TienLen
 //
 //  Created by Robert Edwards on 2/14/16.
@@ -9,13 +9,24 @@
 import PlayingCards
 
 public typealias Combo = Set<TienLen.Card>
-public typealias Run = Array<TienLen.Card>
 
-private let MinimumRunCount = 3
+public struct Hand {
+    static let CardsPerHand = 13
 
-// MARK: - Hands
+    public let cards: Set<Card>
 
-extension TienLen.Hand {
+    public init?(cards: Set<Card>) {
+        guard cards.count == Hand.CardsPerHand else {
+            return nil
+        }
+
+        self.cards = cards
+    }
+}
+
+// MARK: - Hand
+
+extension Hand {
     public var runs: [Run] { return cards.runs }
     public var longestRun: Run? { return cards.longestRun }
     public var combos: Set<Combo> { return cards.combos }
@@ -46,7 +57,7 @@ extension Sequence where Iterator.Element == TienLen.Card {
                     if currentRun != nil {
                         currentRun?.append(nextCard)
                     } else {
-                        currentRun = Run([card, nextCard])
+                        currentRun = [card, nextCard]
                     }
                 } else {
                     break
@@ -56,7 +67,7 @@ extension Sequence where Iterator.Element == TienLen.Card {
 
             }
             
-            if let currentRun = currentRun, currentRun.count >= MinimumRunCount {
+            if let currentRun = currentRun, currentRun.count >= Run.MinimumRunCount {
                 runs.append(currentRun)
                 for card in currentRun {
                     remainingCards.remove(card)
@@ -82,14 +93,6 @@ extension Sequence where Iterator.Element == TienLen.Card {
 
     private func next(rank: Rank) -> Rank? {
         let ranks = TienLen.rankOrder
-        guard let rankIndex = ranks.index(of: rank) else {
-            fatalError("Rank index must be found")
-        }
-        let successorIndex = (rankIndex + 1)
-
-        guard ranks.indices.contains(successorIndex) && successorIndex > 0 else {
-            return nil
-        }
-        return ranks[successorIndex]
+        return rank.next(rankOrder: ranks)
     }
 }

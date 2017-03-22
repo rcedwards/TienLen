@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7DCFBA1E82C011004A4675 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7DCFB91E82C011004A4675 /* Run.swift */; };
+		0A7DCFBC1E82C1F1004A4675 /* RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7DCFBB1E82C1F1004A4675 /* RunTests.swift */; };
 		D4638A1D1CA82A43009F81C6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4638A1C1CA82A43009F81C6 /* Cards.swift */; };
 		E40B2C4C1D90CF88003E5246 /* CardBodyRankViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B2C4B1D90CF88003E5246 /* CardBodyRankViewTests.swift */; };
 		E41027C71CC286B6008A6A46 /* UIColor+Onward.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */; };
 		E41CB0DC1CBAB414006F247F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0DB1CBAB414006F247F /* CardView.swift */; };
 		E41CB0F31CBC1B39006F247F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41CB0F21CBC1B39006F247F /* MainViewController.swift */; };
 		E43ED8AC1CBD8BAB009DA52A /* UIFont+PlayingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */; };
-		E44C2DC71C713DC800C47C56 /* Hands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C2DC61C713DC800C47C56 /* Hands.swift */; };
+		E44C2DC71C713DC800C47C56 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C2DC61C713DC800C47C56 /* Hand.swift */; };
 		E44C2DC91C713E2800C47C56 /* HandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C2DC81C713E2800C47C56 /* HandsTests.swift */; };
 		E45ED9601C6FC9A700FE3B95 /* TienLen.h in Headers */ = {isa = PBXBuildFile; fileRef = E45ED95F1C6FC9A700FE3B95 /* TienLen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E45ED9671C6FC9A700FE3B95 /* TienLen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */; };
@@ -92,13 +94,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A7DCFB91E82C011004A4675 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		0A7DCFBB1E82C1F1004A4675 /* RunTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTests.swift; sourceTree = "<group>"; };
 		D4638A1C1CA82A43009F81C6 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		E40B2C4B1D90CF88003E5246 /* CardBodyRankViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBodyRankViewTests.swift; sourceTree = "<group>"; };
 		E41027C61CC286B6008A6A46 /* UIColor+Onward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Onward.swift"; sourceTree = "<group>"; };
 		E41CB0DB1CBAB414006F247F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E41CB0F21CBC1B39006F247F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E43ED8AB1CBD8BAB009DA52A /* UIFont+PlayingCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+PlayingCards.swift"; sourceTree = "<group>"; };
-		E44C2DC61C713DC800C47C56 /* Hands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hands.swift; sourceTree = "<group>"; };
+		E44C2DC61C713DC800C47C56 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		E44C2DC81C713E2800C47C56 /* HandsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandsTests.swift; sourceTree = "<group>"; };
 		E45ED95C1C6FC9A700FE3B95 /* TienLen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TienLen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45ED95F1C6FC9A700FE3B95 /* TienLen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TienLen.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -253,7 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				E45ED9831C6FCAB900FE3B95 /* TienLen.swift */,
-				E44C2DC61C713DC800C47C56 /* Hands.swift */,
+				E44C2DC61C713DC800C47C56 /* Hand.swift */,
+				0A7DCFB91E82C011004A4675 /* Run.swift */,
 				E48144C61C8BCAFD000C91E9 /* InstantWinChecks.swift */,
 				D4638A1C1CA82A43009F81C6 /* Cards.swift */,
 				E45ED9781C6FC9DD00FE3B95 /* Supporting Files */,
@@ -264,6 +269,7 @@
 		E45ED96A1C6FC9A700FE3B95 /* TienLenTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A7DCFBB1E82C1F1004A4675 /* RunTests.swift */,
 				E48144C41C8BCA5B000C91E9 /* InstantWinTests.swift */,
 				E45ED9C41C6FD77400FE3B95 /* TienLenTests.swift */,
 				E44C2DC81C713E2800C47C56 /* HandsTests.swift */,
@@ -647,9 +653,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44C2DC71C713DC800C47C56 /* Hands.swift in Sources */,
+				E44C2DC71C713DC800C47C56 /* Hand.swift in Sources */,
 				E45ED9841C6FCAB900FE3B95 /* TienLen.swift in Sources */,
 				E48144C71C8BCAFD000C91E9 /* InstantWinChecks.swift in Sources */,
+				0A7DCFBA1E82C011004A4675 /* Run.swift in Sources */,
 				D4638A1D1CA82A43009F81C6 /* Cards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44C2DC91C713E2800C47C56 /* HandsTests.swift in Sources */,
+				0A7DCFBC1E82C1F1004A4675 /* RunTests.swift in Sources */,
 				E48144C51C8BCA5B000C91E9 /* InstantWinTests.swift in Sources */,
 				E45ED9C51C6FD77400FE3B95 /* TienLenTests.swift in Sources */,
 			);

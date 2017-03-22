@@ -10,7 +10,7 @@ import Foundation
 
 import PlayingCards
 
-extension TienLen.Hand {
+extension Hand {
     public var containsInstantWin: Bool { return cards.containsInstantWin }
 }
 
