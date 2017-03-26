@@ -23,7 +23,8 @@ extension Sequence where Iterator.Element == TienLen.Card {
             containsFourTwos() ||
                 containsSixPairs() ||
                 containsThreeTriples() ||
-                containsUltimateDragonHead()
+                containsDragonHead() ||
+                containsUltimateDragon()
         )
     }
 
@@ -39,13 +40,13 @@ extension Sequence where Iterator.Element == TienLen.Card {
         return combos.filter() { $0.count >= 3 }.count >= 3
     }
 
-    private func containsUltimateDragonHead() -> Bool {
+    private func containsUltimateDragon() -> Bool {
         guard let run = longestRun else {
             return false
         }
         let threeOfSpades = TienLen.Card(rank: .three, suit: .spade)
         let aceOfHearts = TienLen.Card(rank: .ace, suit: .heart)
-        return run.count == 13 && (run.contains(threeOfSpades) && run.contains(aceOfHearts))
+        return run.count == 12 && (run.contains(threeOfSpades) && run.contains(aceOfHearts))
     }
 
     private func containsDragonHead() -> Bool {
