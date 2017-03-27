@@ -41,12 +41,17 @@ extension Sequence where Iterator.Element == TienLen.Card {
     }
 
     private func containsUltimateDragon() -> Bool {
-        guard let run = longestRun else {
+        guard var run = longestRun else {
             return false
         }
         let threeOfSpades = TienLen.Card(rank: .three, suit: .spade)
         let aceOfHearts = TienLen.Card(rank: .ace, suit: .heart)
-        return run.count == 12 && (run.contains(threeOfSpades) && run.contains(aceOfHearts))
+        guard let threeIndex = run.index(of: threeOfSpades), run.contains(aceOfHearts) else {
+            return false
+        }
+        run.remove(at: threeIndex)
+        guard let remainingRun = run.longestRun, remainingRun.count >= 11 else { return false }
+        return true
     }
 
     private func containsDragonHead() -> Bool {

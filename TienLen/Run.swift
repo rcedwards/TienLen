@@ -11,7 +11,7 @@ public struct Run {
     var cards: [TienLen.Card]
 }
 
-extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLiteral {
+extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLiteral, RangeReplaceableCollection {
     public typealias Index = Int
     public typealias Element = TienLen.Card
     public typealias SubSequence = ArraySlice<TienLen.Card>
@@ -43,6 +43,14 @@ extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLite
     // TODO: rcedwards enforce sorting and minimum run card count here and valid run
     public init(arrayLiteral elements: Element...) {
         cards = elements
+    }
+
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, TienLen.Card == C.Iterator.Element {
+        cards.replaceSubrange(subrange, with: newElements)
+    }
+
+    public init() {
+        fatalError()
     }
 }
 
