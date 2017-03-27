@@ -9,7 +9,7 @@
 // MARK: - Card Order
 
 extension TienLen.Card: Comparable { }
-public func < (lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
+public func <(lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
     let rankOrder = TienLen.rankOrder
     let suitOrder = TienLen.suitOrder
 

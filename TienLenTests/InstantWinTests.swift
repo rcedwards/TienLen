@@ -15,15 +15,18 @@ import PlayingCards
 class InstantWinTests: XCTestCase {
 
     /*
-    Insant Wins
+     Insant Wins
 
-    Four 2s
-    Six pairs (In sequence, Ex. 44,55,66,77,88,99)
-    Three triples (In sequence, Ex. 444,555,666) (three triples are rarer than six pairs).
-    Dragon's Head (Dragon): A special sequence that runs from 3 through ace. A dragon can only be defeated by another dragon of higher suit. A dragon of hearts can't be defeated. This type of sequence is the longest in the game. The dragon is the sequence that has all individual cards, like 3♠ 4♠ 5 ♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♠ 2♠.
+     Four 2s
 
-    The last instant win occasion, ultimate dragon, is the most difficult to attain. The ultimate dragon must contain two things in order for the player to receive an automatic victory: the 3♠, and the A♥. These two cards are essential in an ultimate dragon, because the three of spades commences the game, and the player can run the sequence straight to the ace of hearts. This makes the entire dragon completely unstoppable, therefore leaving the player with one remaining card, resulting in a victory.
-    */
+     Six pairs (In sequence, Ex. 44,55,66,77,88,99)
+
+     Three triples (In sequence, Ex. 444,555,666) (three triples are rarer than six pairs).
+
+     Dragon's Head (Dragon): A special sequence that runs from 3 through ace. A dragon can only be defeated by another dragon of higher suit. A dragon of hearts can't be defeated. This type of sequence is the longest in the game. The dragon is the sequence that has all individual cards, like 3♠ 4♠ 5 ♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♠ 2♠.
+
+     The last instant win occasion, ultimate dragon, is the most difficult to attain. The ultimate dragon must contain two things in order for the player to receive an automatic victory: the 3♠, and the A♥. These two cards are essential in an ultimate dragon, because the three of spades commences the game, and the player can run the sequence straight to the ace of hearts. This makes the entire dragon completely unstoppable, therefore leaving the player with one remaining card, resulting in a victory.
+     */
 
     func testFourTwosInstantWin() {
         let twoOfHearts = TienLen.Card(rank: .two, suit: .heart)
@@ -31,19 +34,19 @@ class InstantWinTests: XCTestCase {
         let twoOfClubs = TienLen.Card(rank: .two, suit: .club)
         let twoOfDiamonds = TienLen.Card(rank: .two, suit: .diamond)
 
-        guard let fourTwos = TienLen.Hand(cards: [twoOfHearts,
-            twoOfSpades,
-            twoOfClubs,
-            twoOfDiamonds,
-            TienLen.Card(rank: .ace, suit: .spade),
-            TienLen.Card(rank: .five, suit: .spade),
-            TienLen.Card(rank: .nine, suit: .spade),
-            TienLen.Card(rank: .jack, suit: .spade),
-            TienLen.Card(rank: .three, suit: .spade),
-            TienLen.Card(rank: .three, suit: .heart),
-            TienLen.Card(rank: .three, suit: .diamond),
-            TienLen.Card(rank: .six, suit: .spade),
-            TienLen.Card(rank: .jack, suit: .diamond)
+        guard let fourTwos = Hand(cards: [twoOfHearts,
+                                          twoOfSpades,
+                                          twoOfClubs,
+                                          twoOfDiamonds,
+                                          TienLen.Card(rank: .ace, suit: .spade),
+                                          TienLen.Card(rank: .five, suit: .spade),
+                                          TienLen.Card(rank: .nine, suit: .spade),
+                                          TienLen.Card(rank: .jack, suit: .spade),
+                                          TienLen.Card(rank: .three, suit: .spade),
+                                          TienLen.Card(rank: .three, suit: .heart),
+                                          TienLen.Card(rank: .three, suit: .diamond),
+                                          TienLen.Card(rank: .six, suit: .spade),
+                                          TienLen.Card(rank: .jack, suit: .diamond)
             ]) else {
                 XCTFail("Failed to create hand")
                 return
@@ -53,7 +56,7 @@ class InstantWinTests: XCTestCase {
     }
 
     func testSixPairsInstantWin() {
-        guard let sixPairs = TienLen.Hand(cards: [
+        guard let sixPairs = Hand(cards: [
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .three, suit: .heart),
@@ -75,7 +78,7 @@ class InstantWinTests: XCTestCase {
     }
 
     func testThreeTriplesInstantWin() {
-        guard let threeTriples = TienLen.Hand(cards: [
+        guard let threeTriples = Hand(cards: [
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .four, suit: .club),
@@ -96,8 +99,8 @@ class InstantWinTests: XCTestCase {
         XCTAssertTrue(threeTriples.containsInstantWin)
     }
 
-    func testUltimateDragonsHead() {
-        guard let ultimateDragon = TienLen.Hand(cards: [
+    func testDragonsHead() {
+        guard let dragonHead = Hand(cards: [
             TienLen.Card(rank: .three, suit: .spade),
             TienLen.Card(rank: .four, suit: .spade),
             TienLen.Card(rank: .five, suit: .club),
@@ -115,6 +118,27 @@ class InstantWinTests: XCTestCase {
                 XCTFail("Failed to create hand")
                 return
         }
-        XCTAssertTrue(ultimateDragon.containsInstantWin)
+        XCTAssertTrue(dragonHead.containsInstantWin)
+    }
+
+    func testUltimateDragon() {
+        guard let ultimate = Hand(cards: [
+            TienLen.Card(rank: .three, suit: .spade),
+            TienLen.Card(rank: .four, suit: .heart),
+            TienLen.Card(rank: .four, suit: .spade),
+            TienLen.Card(rank: .five, suit: .club),
+            TienLen.Card(rank: .six, suit: .diamond),
+            TienLen.Card(rank: .seven, suit: .club),
+            TienLen.Card(rank: .eight, suit: .spade),
+            TienLen.Card(rank: .nine, suit: .diamond),
+            TienLen.Card(rank: .ten, suit: .club),
+            TienLen.Card(rank: .jack, suit: .spade),
+            TienLen.Card(rank: .queen, suit: .heart),
+            TienLen.Card(rank: .king, suit: .heart),
+            TienLen.Card(rank: .ace, suit: .heart)
+            ]) else { XCTFail("Failed to create hand")
+                return
+        }
+        XCTAssertTrue(ultimate.containsInstantWin)
     }
 }

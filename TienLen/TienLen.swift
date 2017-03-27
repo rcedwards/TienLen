@@ -65,20 +65,6 @@ public struct TienLen: Game {
     public enum Error: Swift.Error {
         case invalidNumberOfPlayers(Int)
     }
-
-    public struct Hand {
-        fileprivate static let CardsPerHand = 13
-
-        public let cards: Set<Card>
-
-        public init?(cards: Set<Card>) {
-            guard cards.count == Hand.CardsPerHand else {
-                return nil
-            }
-
-            self.cards = cards
-        }
-    }
 }
 
 // MARK: - Dealing
@@ -92,7 +78,7 @@ extension TienLen {
 
     fileprivate mutating func newPlayerHand() -> Hand {
         var cards = Set<Card>()
-        for _ in 0..<TienLen.Hand.CardsPerHand {
+        for _ in 0..<Hand.CardsPerHand {
             guard let nextCard = deck.next() else {
                 fatalError("Should never run out of cards while dealing")
             }

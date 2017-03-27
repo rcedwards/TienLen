@@ -75,4 +75,16 @@ extension Rank: CustomStringConvertible, CustomDebugStringConvertible {
             return "2"
         }
     }
+
+    public func next(rankOrder: Array<Rank>) -> Rank? {
+        guard let rankIndex = rankOrder.index(of: self) else {
+            fatalError("Rank index must be found")
+        }
+        let successorIndex = (rankIndex + 1)
+
+        guard rankOrder.indices.contains(successorIndex) && successorIndex > 0 else {
+            return nil
+        }
+        return rankOrder[successorIndex]
+    }
 }

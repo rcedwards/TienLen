@@ -12,7 +12,7 @@ import XCTest
 
 class HandsTests: XCTestCase {
     func testRuns() {
-        guard let hand = TienLen.Hand(cards: [
+        guard let hand = Hand(cards: [
             TienLen.Card(rank: .three, suit: .heart),
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .five, suit: .heart),
@@ -40,12 +40,12 @@ class HandsTests: XCTestCase {
     }
 
     func testMinimumCardCount() {
-        let hand = TienLen.Hand(cards: [TienLen.Card(rank: .ten, suit: .heart)])
+        let hand = Hand(cards: [TienLen.Card(rank: .ten, suit: .heart)])
         XCTAssertNil(hand, "Hand should not be created with less than 13 cards")
     }
 
     func testMaximumCardCount() {
-        let hand = TienLen.Hand(cards: [
+        let hand = Hand(cards: [
             TienLen.Card(rank: .three, suit: .heart),
             TienLen.Card(rank: .four, suit: .heart),
             TienLen.Card(rank: .five, suit: .heart),
