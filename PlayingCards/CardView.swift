@@ -204,7 +204,7 @@ extension CardView {
 
         let bottomLabels = [bottomRightRankLabel, bottomRightSuitLabel]
         bottomLabels.apply() {
-            let transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+            let transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
             $0.transform = transform
         }
         bottomRightRankLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
