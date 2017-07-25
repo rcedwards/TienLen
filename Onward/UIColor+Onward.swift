@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     static var cardColor: UIColor {
-        return UIColor(colorLiteralRed: 0.9921,
+        return UIColor(red: 0.9921,
                        green: 0.9647,
                        blue: 0.8941,
                        alpha: 1)

@@ -7,8 +7,13 @@
 //
 
 public struct Run {
-    static let MinimumRunCount = 3 // TODO: rcedwards enforce this in the initializer
-    var cards: [TienLen.Card]
+    fileprivate static let MinimumRunCount = 3
+
+    fileprivate var cards: [TienLen.Card]
+
+    var isOfValidLength: Bool {
+        return cards.count >= Run.MinimumRunCount
+    }
 }
 
 extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLiteral, RangeReplaceableCollection {
@@ -40,7 +45,6 @@ extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLite
         cards.append(card)
     }
 
-    // TODO: rcedwards enforce sorting and minimum run card count here and valid run
     public init(arrayLiteral elements: Element...) {
         cards = elements
     }

@@ -35,7 +35,7 @@ extension Hand {
 extension Sequence where Iterator.Element == TienLen.Card {
 
     public var longestRun: Run? {
-        return runs.sorted { $0.0.count > $0.1.count }.first
+        return runs.sorted { $0.count > $1.count }.first
     }
 
     public var runs: [Run] {
@@ -67,7 +67,7 @@ extension Sequence where Iterator.Element == TienLen.Card {
 
             }
             
-            if let currentRun = currentRun, currentRun.count >= Run.MinimumRunCount {
+            if let currentRun = currentRun, currentRun.isOfValidLength {
                 runs.append(currentRun)
                 for card in currentRun {
                     remainingCards.remove(card)
