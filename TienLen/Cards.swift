@@ -14,10 +14,10 @@ public func <(lhs: TienLen.Card, rhs: TienLen.Card) -> Bool {
     let suitOrder = TienLen.suitOrder
 
     guard
-        let lhsRankIndex = rankOrder.index(of: lhs.rank),
-        let rhsRankIndex = rankOrder.index(of: rhs.rank),
-        let lhsSuitIndex = suitOrder.index(of: lhs.suit),
-        let rhsSuitIndex = suitOrder.index(of: rhs.suit) else {
+        let lhsRankIndex = rankOrder.firstIndex(of: lhs.rank),
+        let rhsRankIndex = rankOrder.firstIndex(of: rhs.rank),
+        let lhsSuitIndex = suitOrder.firstIndex(of: lhs.suit),
+        let rhsSuitIndex = suitOrder.firstIndex(of: rhs.suit) else {
             fatalError("Rank order and suit order should contain all possible types.")
     }
 

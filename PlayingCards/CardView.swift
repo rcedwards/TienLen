@@ -168,7 +168,7 @@ extension CardView {
         hollowRect.stroke()
     }
 
-    open override static var requiresConstraintBasedLayout: Bool {
+    public override static var requiresConstraintBasedLayout: Bool {
         return true
     }
 }

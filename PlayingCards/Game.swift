@@ -14,7 +14,7 @@ public protocol Game {
 }
 
 public extension Game {
-    public static func validateCardOrder() -> Bool {
+    static func validateCardOrder() -> Bool {
         let ranks = rankOrder
         let suits = suitOrder
         let suitSet = Set(suits)
