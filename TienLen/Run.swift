@@ -25,7 +25,7 @@ extension Run: MutableCollection, RandomAccessCollection, ExpressibleByArrayLite
     public var startIndex: Int { return cards.startIndex }
     public var endIndex: Int { return cards.endIndex }
     public func index(after i: Int) -> Int { return cards.index(after: i) }
-    public func index(of element: Element) -> Int? { return cards.index(of: element) }
+    public func index(of element: Element) -> Int? { return cards.firstIndex(of: element) }
 
     public subscript(i: Int) -> TienLen.Card {
         get { return cards[i] }

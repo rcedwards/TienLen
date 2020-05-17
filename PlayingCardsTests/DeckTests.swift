@@ -41,7 +41,6 @@ class DeckTests: XCTestCase {
 
     func testDescription() {
         // consistent description is not possible right now without sorting so testing based on char count
-        XCTAssertEqual(deck.description.characters.count, 212)
-        XCTAssertEqual(deck.debugDescription, deck.description)
+        XCTAssertEqual(deck.description.count, 212)
     }
 }

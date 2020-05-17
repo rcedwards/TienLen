@@ -77,7 +77,7 @@ extension Rank: CustomStringConvertible, CustomDebugStringConvertible {
     }
 
     public func next(rankOrder: Array<Rank>) -> Rank? {
-        guard let rankIndex = rankOrder.index(of: self) else {
+        guard let rankIndex = rankOrder.firstIndex(of: self) else {
             fatalError("Rank index must be found")
         }
         let successorIndex = (rankIndex + 1)

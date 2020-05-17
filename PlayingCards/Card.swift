@@ -6,7 +6,7 @@
 //  Copyright © 2016 Panko. All rights reserved.
 //
 
-public struct Card: Equatable {
+public struct Card: Equatable, Hashable {
     public let rank: Rank
     public let suit: Suit
 
@@ -18,12 +18,6 @@ public struct Card: Equatable {
 
 public func ==(lhs: Card, rhs: Card) -> Bool {
     return lhs.rank == rhs.rank && lhs.suit == rhs.suit
-}
-
-extension Card: Hashable {
-    public var hashValue: Int {
-        return rank.hashValue ^ suit.hashValue
-    }
 }
 
 extension Card: CustomStringConvertible, CustomDebugStringConvertible {
