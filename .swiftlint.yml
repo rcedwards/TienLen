@@ -7,4 +7,4 @@ excluded:
   - Pods
 
 # Make line length violations more lenient
-line_length: 135
+line_length: 140
